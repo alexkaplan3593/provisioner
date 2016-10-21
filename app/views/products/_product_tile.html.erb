@@ -1,0 +1,51 @@
+<% @products.each do |product|
+
+product_like = product.likes.where(:user_id => current_user)
+	if product_like.exists?
+		product_status = product_like.first.id
+	else
+		product_status = false
+	end
+
+	if user_signed_in?
+			user_status = current_user.id
+	else
+			user_status = false
+	end
+
+	%>
+
+
+
+<div class="ProductCard product product-card" >
+	<div class="ProductCard-imageContainer product-img-container">
+		<div class="hover-container">
+			<div class="ProductCard-image product-image" style="opacity: 1; background-image: url(<%= product.image %>);">
+			</div>
+
+			<div class="ProductCard-actionsContainer">
+				<span data-like="<%= product_status %>" id="card-<%=product.id %>" class="cardlike" onclick="like_product(<%=product.id %>, <%= user_status%>)">
+					<span class="like-action like-hidden">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						</button>
+					</span>
+				</span>
+			</div>
+
+			<%= link_to product_path(product), :class=> "product-link hover-overlay-white fancybox fancybox.ajax ajax" do %>
+			<div class="ProductCard-hoverDetails">
+				<h3 class="ProductCard-hoverTitle js-dotdotdot">
+					<%= product.name %>
+				</h3>
+			</div>	
+			<% end %>
+
+
+		</div>
+	</div>
+	<div class="top-right">
+		<a href="<%= product.url %>/?tag=kwiz-20" data-analytics-source="Product Card" target="_blank" rel="nofollow" class="card-price button is-prime">$<%= product.price %></a>
+	</div>
+</div>
+<% end %>

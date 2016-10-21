@@ -1,0 +1,59 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= f.label :url, "URL" %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <button type="button" onclick="get_amazon_details()">Click me</button>
+
+    <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+
+  <div id="image_field">
+  </div>
+
+    <div class="field">
+    <%= f.label :vendor %><br>
+    <%= f.text_field :vendor %>
+  </div>
+
+
+    <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.collection_select(:tag_ids, @tags, :id, :tag_name, {:prompt => true}) %>
+
+  </div>
+
+    <%= f.hidden_field :discoverer, :value => current_user %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    //$('#product_url').change(get_amazon_details);
+</script>

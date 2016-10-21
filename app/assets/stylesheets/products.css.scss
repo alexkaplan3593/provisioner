@@ -1,0 +1,99 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.social-wrapper{position:absolute;bottom:48px;width:100%;padding-right:100px;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-transition:bottom 0.2s ease-in-out;transition:bottom 0.2s ease-in-out}
+@media only screen and (max-width: 680px){.social-wrapper{bottom:24px}}
+@media only screen and (max-width: 540px){.social-wrapper{bottom:12px}}
+.social-container{width:100%}
+@media only screen and (max-width: 985px){.social-container{border:none}}
+@media only screen and (max-width: 680px){.social-container{border-top:2px solid #f2f2f2}}
+@media only screen and (max-width: 540px){.social-container{border:none}}
+.social-container .socials{display:inline-block;vertical-align:top;padding-right:16px}
+@media only screen and (max-width: 985px){.social-container .socials{border:none;padding-right:0}}
+@media only screen and (max-width: 680px){.social-container .socials{border-right:2px solid #f2f2f2;padding-right:16px}}
+@media only screen and (max-width: 540px){.social-container .socials{border:none;padding-right:0}}
+.share-button{display:inline-block;width:32px;height:48px;font-size:0;vertical-align:bottom;background-repeat:no-repeat;background-position:center center;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;opacity:.3}
+.share-button:hover{opacity:.7}
+.share-button.facebook{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALNJREFUeNpi%2FP%2F%2FP8NAAiaGAQajDhh1ANEOYGRkRMcCQDwfiM8D8X8gvg%2FE%2B0l1ACOx2RBkKRJQAOLzQCyArg5oHiM9oqAem%2BXkABYy9QWg8RcA8UNyDCI3CpA1XQBiQ6QooHsu%2BDBiyoH90KBHD2MHJPH%2FAx0CFwbaAR9omQ0XAvFBpHIABh5A5cgKAXC2IQaja0PC%2B8kxD4ZHa8NRB4w6YMAdwDjaMRl1wKgDBtoBAAEGAJwhbiKJBO64AAAAAElFTkSuQmCC);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALNJREFUeNpi%2FP%2F%2FP8NAAiaGAQajDhh1ANEOYGRkRMcCQDwfiM8D8X8gvg%2FE%2B0l1ACOx2RBkKRJQAOLzQCyArg5oHiM9oqAem%2BXkABYy9QWg8RcA8UNyDCI3CpA1XQBiQ6QooHsu%2BDBiyoH90KBHD2MHJPH%2FAx0CFwbaAR9omQ0XAvFBpHIABh5A5cgKAXC2IQaja0PC%2B8kxD4ZHa8NRB4w6YMAdwDjaMRl1wKgDBtoBAAEGAJwhbiKJBO64AAAAAElFTkSuQmCC) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARdJREFUeNrs29ENgkAMgGFq3ENHYAMdQTdwFDdwBF3BCXAEnADdgA3OXoIvRs%2FDHAj0b9LEh5PQz5LekSjOucxyzDLjAQAAAAAAAAAAAACA1ZinvqCItFmea641F81nH7Xm9blAzyr7LgEk9WEoEsAXe2iKD4ben4yqAyJip3kcyiPQdwf4X7xoc72uO6BvgEpzOSSAPqfApm3xo5wCgVhFrPEToJwqQP6l8K3mxepG6PSP4ocEcGYrDAAAAEwFwJ%2Fe3JsMHXyKD9%2BprHfADQDjAHfrAKV1gJoO6Dr8C5GU%2BcOoC47I1Pf3mmyEAAAAAAAAAAAAAAAAAAAAAADAXgj%2FGOERAAAAAAAAAAAAAAAAAAAMxkOAAQCefMUdPqsdZQAAAABJRU5ErkJggg%3D%3D) 2x)}
+.share-button.twitter{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOVJREFUeNrsllENxCAMhtkpmAQkIOEkIGXn4BxMAhbOAZmCSdg5OAkcTbqELAFaRsJLm%2Fwv29L%2Fo6XNphCCGhkPNTgEQAAEYDiAgkWUE4appJijHKRCHVE2SuPzuehBANgxUS58Yn4VvLN3AdJk%2BmJuCuagH3zTowJpUpe05VkBMNU2EwCWgsFeAVA9AM5SBqY8BYAyhh%2B86dz49hpD3VgB26sFECsT4qAekroJN2YbXj034RkWT1Y7vWN5MADgLry55ncBLI7TTth4S1OViVOwZiA8Gs%2BtbZ7kt1wABEAARgP8BRgAhZ59yUn%2BLCgAAAAASUVORK5CYII%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOVJREFUeNrsllENxCAMhtkpmAQkIOEkIGXn4BxMAhbOAZmCSdg5OAkcTbqELAFaRsJLm%2Fwv29L%2Fo6XNphCCGhkPNTgEQAAEYDiAgkWUE4appJijHKRCHVE2SuPzuehBANgxUS58Yn4VvLN3AdJk%2BmJuCuagH3zTowJpUpe05VkBMNU2EwCWgsFeAVA9AM5SBqY8BYAyhh%2B86dz49hpD3VgB26sFECsT4qAekroJN2YbXj034RkWT1Y7vWN5MADgLry55ncBLI7TTth4S1OViVOwZiA8Gs%2BtbZ7kt1wABEAARgP8BRgAhZ59yUn%2BLCgAAAAASUVORK5CYII%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAhVJREFUeNrsmYFtwjAQRZOKAegE9Qb1Bk03oBvABoxAJ6AbWJ0AOkHoBIQJYAPYII2li2RFAYx9tqPmn%2FSFEgXL9%2B6csy95XdfZmO0pG7kBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAhNd4RcFMjmjTZ6WoZKut9nRSPh5QcTgJWn41NytL6hfSNJz8%2Fo%2BTP9NymAOU1QeTi%2Fv%2BN8q3PneumdyQwAlDEhFwjK0vmuFGXEWi%2BDlAC6qbtp09LChKPzWkf6XaXOgPLK5ArLl17tIeW7BDjK4OlKZEtScScDXO2r0WIIZXBmEak9RVv0VA%2BXyJdcfuSuNT3Pc%2FPy%2BEA0dcZUjQ6N3iyXStd2jd67AJz8YAAgjDo%2BzeIYG4AJw2QUOb6j5RDDfrkG4gBwoTSWEXfwlyEdhn4SHGF2XANxvAParayIGP3nviqQKgMuLPXY3rZD7AfolPzgXJs37Huo%2FYCpcTipA%2BnI7ceEkaWgd0FI%2Bxx6R6gMGP0yiB%2FMAERP04JLMgQA7qboibaoFfO4iwBjBm%2BKtg1O34xQQf0I3BWWD%2FT7nJ0fIgDp0etrtY6RyRPPsieNzY8%2BEL2YvXrPneU2i2GeGVAYzUkOKdeeQuolMOv5omOrc9vaThFIrpaYuR3WMF5pecieiFZULg%2BU5hVXJkc9Dv8Xw%2BdxAAAAAAAAAAAAAAAAAAAAAAAAAAAAABid%2FQkwAFoAOsP1A4C%2BAAAAAElFTkSuQmCC) 2x)}
+.share-button.pinterest{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWxJREFUeNrsVottAyEMvYsyACNcN2CEjHCdoIyQEdjgRrh2gnaDdIN0A7pBsgEF6SE5lgn0Po0qHdITFwfsh21sdt775pHYNQ8eG4GNwD73R9u2NfsPmD9LC2PGL%2BEBFWADXNQZcAI8ZBZr6kfufgrDBFxg7B4uWFtnp5LAWGGYY1yKgBGUnyCPOdBhHgQPmRKBNpccSEKF2Ka4XgOekXQGxpP8Fd%2BRnCbypzjn7JQ8YNmJNOAysdeEdJLbOSGgigbIziTrz4zEuxA2N4cAP31PlCpGKKFBaG5kU7rhgf3%2BIrH9QHybzL3%2FLuiaVIiUYLQjiUgN6yV6AS%2BvPTl5R2TSHl3QVe0B6soBiq8Ih%2BT%2BN8wvd8Ix6xom9OSkDkhF58jWzrqGKlP%2FFYwfhUbFa4NauhQ75h2H6icRNWs0o5GU3D9pRrwdW6HQrN6OaZw1boQXQpN9kEzthqs%2Fyfa%2F3VBbYLZn%2BUbg3xD4EWAAA4bJ5h1bcbEAAAAASUVORK5CYII%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWxJREFUeNrsVottAyEMvYsyACNcN2CEjHCdoIyQEdjgRrh2gnaDdIN0A7pBsgEF6SE5lgn0Po0qHdITFwfsh21sdt775pHYNQ8eG4GNwD73R9u2NfsPmD9LC2PGL%2BEBFWADXNQZcAI8ZBZr6kfufgrDBFxg7B4uWFtnp5LAWGGYY1yKgBGUnyCPOdBhHgQPmRKBNpccSEKF2Ka4XgOekXQGxpP8Fd%2BRnCbypzjn7JQ8YNmJNOAysdeEdJLbOSGgigbIziTrz4zEuxA2N4cAP31PlCpGKKFBaG5kU7rhgf3%2BIrH9QHybzL3%2FLuiaVIiUYLQjiUgN6yV6AS%2BvPTl5R2TSHl3QVe0B6soBiq8Ih%2BT%2BN8wvd8Ix6xom9OSkDkhF58jWzrqGKlP%2FFYwfhUbFa4NauhQ75h2H6icRNWs0o5GU3D9pRrwdW6HQrN6OaZw1boQXQpN9kEzthqs%2Fyfa%2F3VBbYLZn%2BUbg3xD4EWAAA4bJ5h1bcbEAAAAASUVORK5CYII%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAsNJREFUeNrsW%2B1twjAQTSoG8AbNBg0TkE5Q2CAjMEKYIGIC2gnSDRImgA1CJzAbUEdyJMv4O3E%2ByFm6HxHB9j3f%2BfmeIXw8HsGS21uw8AYAAAAAAAAAAAAAAAAAAAAAAAttK5cvhWHYx9gJ91x17dClsFsNBDQilhLbUMeR5L07BeJM7Js%2B%2B20NarZm0SJip2YYRzvRPvz54gkA1NFxERBoLgDExOoenW%2Btpn1PGoDUg%2BO8pVMFYAjnlSC4%2BBK6UIeABpvQvBh%2B%2FZfu8leG%2FmKa4zFliq1BP2umD2ca7CMCkEHOY2KZyUbG9JkZ7AloCimg2%2B0LC8dlkaVih1EBiDTO7yV7RUGjgn23cTQX8D7SgBCNCYBq9TPB0bd23OSQALCnKBgaAKRwoOyBIVKLPtAYAKQmYUnz2IXqsCAdahVYLr50KYe%2FFDR349KEbQ117Yh9EjtomICnw6PlXLzSoCwn2UlvddSl2UdKASvIomXwCJBRG1vXb7jPDoIS989izKvlXLwpQoniszu3Ynx6%2BGrJHCQxkcDxsXRN0GblojkAwE7yJtjEAm6TVOXveaoAVIYr%2BqNZ7Y3lOInjnAalwZobIpdQZKA5GmPBdC9TosFKkQKZhOYqi5A%2BCt6Ne139jhGgO9%2B39X%2FJVHtPw0vsYnlgcj4K%2ByqGtLW7ID1U4mei6XuUYshEDDERM%2Fc0SkqJaqQqhUcth00EEVmFGOkkbkNFaHRBxDQKasGqYwWttZog1vSbT0EVbiWrSKME75jngqHE9i7wRvt4NzggtYesNXu8HksVNhE9eG0QB93vBuI5XYzEPShEXi5Ghroa4%2FP%2FJa%2FGZJej2OL4O%2FvLUXZjzAWyVhIs4HqcPyfsDYqZl%2FuBhAyMQsMAmL6Tuuh8Y94O96EEVV07dPIF%2FjKz8AYAAAAAAAAAAAAAAAAAAAAAAAtt%2FwIMAEHC6ySGb59iAAAAAElFTkSuQmCC) 2x)}
+.share-button.email{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALVJREFUeNpi%2FP%2F%2FP8NAAiaGAQajDhh1wKgDBtwBDKCCCBsGgvMgaSrh87jsYcRVEjIyMv6nskcZyY2CRCA%2BQIadB6B6yY4CWPDtB2IDIA4A4vdEBPd7qFoDqN7%2FEGtw2EOEA2C4H4gVoDQuy3GqoYYDcPqOmFCilgOQLQT5tACKFdAcRLQDyC0HHID4PhALQPF9qBjJYEhkw9G6YOQ64AIV7blAci4YjYJRB4w6YNQB9AIAAQYAG2Ei7O84y3YAAAAASUVORK5CYII%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALVJREFUeNpi%2FP%2F%2FP8NAAiaGAQajDhh1wKgDBtwBDKCCCBsGgvMgaSrh87jsYcRVEjIyMv6nskcZyY2CRCA%2BQIadB6B6yY4CWPDtB2IDIA4A4vdEBPd7qFoDqN7%2FEGtw2EOEA2C4H4gVoDQuy3GqoYYDcPqOmFCilgOQLQT5tACKFdAcRLQDyC0HHID4PhALQPF9qBjJYEhkw9G6YOQ64AIV7blAci4YjYJRB4w6YNQB9AIAAQYAG2Ei7O84y3YAAAAASUVORK5CYII%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAW9JREFUeNrsmoFtwjAQReNOwAhhg47ACDACG3QDYALYgBFgg7BBRygbwAbhIp0ly0JIThx8Je%2Bkr0gosf2f7LvYwbVtW005vqqJBwAAAAAAAAAAAAAAAAAAAAAAAAAAmGB0J0IpkpiJmu5RY2p0bGl%2BegCwaD6EkOTHpZ4JOuesHyImecqRA64FzV4tJMG1aCW6v9H4XftcW6kCZ9FcdHiD%2BYP2dS5VBeLEcxLVQZPfIyXKRtv2UWvf8X2jV4Fng7uJthHbH%2F19qPGbthXG9kXbRQB4%2FYoWwUC7unwcYP7oa7vGQvt49UxRAEMGngukCQB9pm6upWQGQGryypVMzQHw2j9ZFn%2BqeLrvB%2FRjFoCf4svIbAhlmaFymAYQLos6Wha53h3%2B1WZop9dNqc0Qu0GOxAAAAAAAAAAA%2BKSYMQNGBnAx7OeSfDr9QZ%2FGTlWPT2OOf4uTAwAAAAAAAAAAAAAAAAAAAAAAAAAAwMTiIcAA8HHx13GIetYAAAAASUVORK5CYII%3D) 2x)}
+
+.product-header{
+    width: 100%;
+    height: 640px;
+    font-size: 0;
+    position: relative;
+    text-align: right;
+    box-shadow: 0px 13px 40px -24px rgba(0,0,0,0.15);
+}
+
+.details-action{display:block;left:inherit;position:relative;top:inherit}
+.Dropdown{display:none;background:white;font-size:1rem;position:absolute;width:312px;margin-left:-232px;top:110%;text-align:left;border-radius:3px;z-index:50000;box-shadow:0 0 40px 4px rgba(0,0,0,0.2)}
+@media only screen and (max-width: 680px){.details-image-container .product-image{margin:8%;margin-bottom:64px}}
+
+.ProductDetails-actionsContainer{
+	width:100%;bottom:48px;
+	position:absolute;
+	padding-right:10%;
+	padding-left:18%;
+	box-sizing:border-box;
+	display:flex;
+	-ms-flex-direction:row;
+	-webkit-flex-direction:row;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	flex-direction:row;
+	-ms-flex-pack:center;
+	-webkit-justify-content:center;
+	-webkit-box-pack:center;
+	justify-content:center}
+
+@media only screen and (max-width: 680px){.ProductDetails-actionsContainer{padding-left:10px;padding-right:0;text-align:left;bottom:-15px}}
+@media only screen and (max-width: 540px){.ProductDetails-actionsContainer{bottom:0}}
+
+.product-info{
+	width:50%;
+	display:inline-block;
+	padding-left:50px;
+	padding-right:50px;
+	height:100%;
+	font-size:1rem;
+	box-sizing:border-box;
+	position:relative;
+	vertical-align:top;
+	text-align:left
+}
+
+@media only screen and (max-width: 680px){
+	.product-info{padding:0 20px 30px;overflow:hidden;width:100%}
+}
+
+.product-info .centered-section{padding-bottom:108px}
+
+@media only screen and (max-width: 680px){
+	.product-info .centered-section{
+		padding-bottom:80px}
+}
+
+@media only screen and (max-width: 540px){.product-info .centered-section{padding-bottom:48px}}.product-info .goto-amazon-container{margin-top:42px;margin-bottom:48px;position:relative}.product-info .goto-amazon-container a{vertical-align:middle}.ProductInfo-title{color:#525252;font-size:32px;font-weight:300;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;line-height:42px;max-height:84px;overflow:hidden;margin:20px 0 0;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out}
+@media only screen and (max-width: 540px){.ProductInfo-title{margin-top:10px;font-size:28px;line-height:38px;max-height:76px}}@media only screen and (max-width: 400px){.ProductInfo-title{margin-top:0}}
+
+.ProductInfo-titleLink{color:#525252}
+.ProductInfo-titleLink:hover{background-size:2px 2px;background-image:-webkit-linear-gradient(top, transparent 50%, #525252 50%);background-image:linear-gradient(to bottom, transparent 50%, #525252 50%);background-repeat:repeat-x;background-position:center bottom;text-decoration:none}.ProductInfo-brand{text-transform:uppercase;color:#999999;font-weight:700;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;letter-spacing:2px;margin-top:12px}
+
+.ProductInfo-brand span{color:#cccccc}
+a.ProductInfo-brandLink{color:#999999;text-decoration:none;-webkit-transition:color 0.2s ease-in-out;transition:color 0.2s ease-in-out;background-size:2px 2px;background-image:-webkit-linear-gradient(top, transparent 50%, #999 50%);background-image:linear-gradient(to bottom, transparent 50%, #999 50%);background-repeat:repeat-x;background-position:center bottom;text-decoration:none}
+
+a.ProductInfo-brandLink:hover{color:#525252}.found-by{color:#999999;font-weight:500;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;white-space:nowrap}.found-by a{color:#212121;font-weight:500;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-decoration:none}.found-by a:hover{background-size:2px 2px;background-image:-webkit-linear-gradient(top, transparent 50%, #212121 50%);background-image:linear-gradient(to bottom, transparent 50%, #212121 50%);background-repeat:repeat-x;background-position:center bottom;text-decoration:none}
+.found-by-divider{margin:0 5px 0 6px;font-weight:500;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;color:#cccccc}
+
+/* Use this for styling for other dividers */
+.Details-divider{height:2px;width:100%;background-color:whitesmoke}
+
+.DetailsSection-container{padding-top:64px;padding-bottom:72px}.DetailsSection--white{background-color:white}.DetailsSection--wrapped{padding-left:14%;padding-right:14%}.DetailsSection-header{text-align:center;display:block;padding:0 0 48px;font-size:18px;font-weight:700;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:3px;color:#525252}.DetailsSection-header.u-invertTextColor{color:white;opacity:.5;font-weight:500;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+
+@media only screen and (max-width: 540px){
+	.DetailsSection-header{padding-bottom:24px}
+}

@@ -1,0 +1,7 @@
+$('#tiles').append('<%= j render 'products/product_tile' %>');
+<% if @products.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @products %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

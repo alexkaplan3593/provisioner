@@ -1,0 +1,129 @@
+<% product_like = @product.likes.where(:user_id => current_user)
+  if product_like.exists?
+    product_status = product_like.first.id
+  else
+    product_status = false
+  end
+
+  if user_signed_in?
+      user_status = current_user.id
+  else
+      user_status = false
+  end
+  %>
+
+<script type="text/javascript">scout();</script>
+
+<div class="wrapper">
+  <div class="product-detail-page js-detail-page" data-product-id="<%= @product.id %>" data-product-name="<%= @product.name %>" itemtype="http://schema.org/Product">
+
+  <meta property=”og:title” content=”Your eye-catching title here” />
+  <meta property=”og:url” content=”http://www.yourdomain.com” />
+  <meta property=”og:image” content=”http://www.yourdomain.com/image-name.jpg” />
+  <meta name=”twitter:title” content=”Your title here” />
+  <meta name=”twitter:image” content=”http://www.yourdomain.com/image-name.jpg” />
+
+    <div class="product-header">
+      <div class="details-image-container">
+        <div class="hover-container">
+          <div class="ProductDetails-actionsContainer">            
+            <span data-like="<%= product_status %>" id="card-<%=@product.id %>" class="cardlike" onclick="like_product(<%=@product.id %>, <%= user_status%>)">
+              <span class="like-action">
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                </button>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="product-image" style="background-image: url('<%= @product.image %>'); ">
+          <span><%= @product.name %></span>
+        </div>
+
+        <div class="preload">
+          <img alt="<%= @product.name %>" src="<%= @product.image %>">
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="vertical-center-outer">
+          <div class="vertical-center-inner">
+            <div class="centered-section border-box">
+              <h1 class="ProductInfo-title" itemprop="name">
+              <a target="_blank" rel="nofollow" class="ProductInfo-titleLink" href="<%= @product.url %>/?tag=kwiz-20"><%= @product.name %></a>
+              </h1>
+              <div class="ProductInfo-brand">
+                <span>by</span>
+                <%= @product.vendor %>
+              </div>
+              <div class="goto-amazon-container" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+      <a class="product-page button goto" target="_blank" rel="nofollow" data-analytics-source="Details Page" href="<%= @product.url %>/?tag=kwiz-20"><%= @product.price %> on Amazon Prime</a>
+              </div>
+
+                <div class="">
+                  <div class="found-by">
+                    Found by
+                    <a href="/user/<%= @product.discoverer %>">person's email</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="social-wrapper">
+            <div class="social-container">
+              <div class="socials">
+                <a class="share-button facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=provisioner.co/products/"></a>
+                <a class="share-button twitter" target="_blank" href="http://twitter.com/home?status=Found+on+Provisioner%3A+<%= @product.name %>+https%3A%2F%2Fprovisioner.co%2Fp%2F4628"></a>
+                <a class="share-button pinterest" target="_blank" href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fprovisioner.co%2Fproducts%2F4628&amp;media=<%= @product %>&amp;description=<%= @product.name %>"></a>
+                <a class="share-button email" href="mailto:?subject=<%= @product.name %> found on Provisioner&amp;body=I thought you might like this: https://provisioner.co/p/4628"></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <% if @related.present? %>
+
+      <div class="product-secondary-container">
+        <div class="DetailsSection-container">
+            <div class="DetailsSection-header">Related</div>
+            
+            <div class="ProductPivot">
+              <%= link_to tag_path(@related_tag), :class=>"ProductPivot-header" do%>
+                  <span class="ProductPivot-name"><%= @related_tag.tag_name %></span>
+                  <span class="ProductPivot-cta">View the full collection</span>
+              <% end %>
+
+              <div class="ProductPivot-productsContainer">
+                <% @related.each do |product| %>
+                  <%= link_to product_path(product), :class=>"ProductPivot-product fancybox fancybox-wide fancybox.ajax hover-overlay-light", 'data-product-id' =>  @product.id, 'data-product-name' => @product.name do%>
+                    <div class="product-image" style="height:75px; background-image: url('<%= @product.image %>'); background-image: -webkit-image-set(url('<%= @product.image %>') 1x, url('<%= @product.image %>') 2x )">
+                      <span><%= @product.name %></span>
+                    </div>
+                  <%end %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+        
+        <div class="Details-divider"></div>
+      </div>
+    <% end %><!-- End if related products -->
+
+    <div>
+      <div>
+        <div>
+          <div class="SignupMessage SignupMessage--DetailsPage">
+            <span>Sign up to find the best products on the web.</span>
+
+            <div class="SignupMessage-Buttons">
+              <a href="/users/sign_up" class="button Button--Dark fancybox fancybox.ajax no-margin Track-DetailsSignupJoinButton">
+                <span>Join</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
