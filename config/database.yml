@@ -5,6 +5,8 @@ default: &default
 
 development:
  <<: *default
+ database: provisioner_app
+ host: localhost
 
 test:
  <<: *default

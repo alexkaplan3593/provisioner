@@ -16,10 +16,12 @@
     <%= f.text_field :tag_name %>
   </div>
 
+  <% if @tags.present? %>
   <div class="field">
     <%= f.label :assoc_tags %><br>
     <%= f.collection_select(:assoc_tags, @tags, :id, :tag_name, {:prompt => true}, {:class=>'form-control'}) %>
   </div>
+  <% end %>
 
     <div class="field">
     <%= f.label :image %><br>
