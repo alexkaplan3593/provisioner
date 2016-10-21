@@ -11,8 +11,13 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+<<<<<<< HEAD
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = false
+=======
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+>>>>>>> 2d031059c7016510db666cc2bd5f7e7a5a090ff6
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -27,7 +32,11 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+<<<<<<< HEAD
+  config.assets.compile = true
+=======
   config.assets.compile = false
+>>>>>>> 2d031059c7016510db666cc2bd5f7e7a5a090ff6
 
   # Generate digests for assets URLs.
   config.assets.digest = true
