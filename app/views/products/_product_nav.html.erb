@@ -1,0 +1,22 @@
+<div class="nav-level">
+		<div class="nav-level-layout wrapper">
+			<div class="page-filters">
+				<div class="filter-group">
+				<%	if controller_name == "tags" 
+						base_url = "/tags/" + @tag.id.to_s + "/"
+
+					else
+						base_url = "/products/"
+					end
+
+					%>
+
+					<a class="filter-link <%= 'active' if current_page?(action: 'recent', controller: 'products') %>" href="<%=base_url%>recent">New</a>
+					<a class="filter-link <%= 'active' if current_page?(action: 'hot', controller: 'products') %>" href="<%=base_url%>hot">Most popular</a>
+					<a class="filter-link <%= 'active' if current_page?(action: 'most_to_least', controller: 'products') %>" href="<%=base_url%>most_to_least">&nbsp;$$$&nbsp;</a>
+					<a class="filter-link <%= 'active' if current_page?(action: 'least_to_most', controller: 'products') %>" href="<%=base_url%>least_to_most">&nbsp;$&nbsp;</a>
+					<a class="filter-link  <%= 'active' if current_page?(action: 'prime', controller: 'products') %>  is-prime" href="<%=base_url%>prime">Prime</a>
+				</div>
+			</div>
+		</div>
+	</div>

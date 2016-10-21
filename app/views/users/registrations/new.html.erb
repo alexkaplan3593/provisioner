@@ -1,0 +1,61 @@
+<h2>Sign up</h2>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1667072860232019";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+<div class="inline-box">
+<h2 class="js-login-form-title">Join to like and add products.</h2>
+<div class="sign-up-disambiguation">
+<div class="form-contained">
+<div class="sign-up-links js-sign-up-links field-container">
+<a class="button juicy twitter js-sign-up-button-twitter" tabindex="1" data-analytics-event="Signup - Choose method" data-analytics-properties="{&quot;source&quot;:&quot;Sign up page&quot;,&quot;type&quot;:&quot;Twitter&quot;}" href="/auth/twitter">Connect with Twitter</a>
+
+<a class="button juicy facebook js-sign-up-button-facebook fb-login-button" href="/auth/facebook">Connect with Facebook</a>
+
+
+<a class="button juicy email js-sign-up-email-button" tabindex="3" data-analytics-event="Signup - Choose method" data-analytics-properties="{&quot;source&quot;:&quot;Sign up page&quot;,&quot;type&quot;:&quot;Email&quot;}" href="/create_account">Sign up with Email</a>
+</div>
+</div>
+</div>
+<div class="form-divider"></div>
+<div class="form-footnote">
+<a class="text-button sign-in fancybox fancybox.ajax ajax" tabindex="4" href="/login?source=Log+in+page"><span>I already have an account</span>
+</a></div>
+</div>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

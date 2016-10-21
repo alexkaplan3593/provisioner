@@ -1,0 +1,24 @@
+<div class="wrapper">
+
+  <div class="cards-container ready">
+    <div class="CollectionGrid-container">
+      <div class="CollectionGrid">
+
+        <% @tags.each do |tag| %>
+
+        <%= link_to tag_path(tag), :class =>"CollectionGrid-tile hover-overlay-light" do%>
+
+          <div class="CollectionGrid-tileImage align-center" style="background-image: url(<%= tag.image%>)"></div>
+          <div class="CollectionGrid-tileName js-dotdotdot" style="word-wrap: break-word; white-space: normal;"><%= tag.tag_name %></div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="InfiniteScrollFooter">
+    <div class="InfiniteScrollFooter-signature"></div>
+  </div>
+</div>
+
+

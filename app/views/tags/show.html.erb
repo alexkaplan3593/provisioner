@@ -1,0 +1,18 @@
+<div class="PageHeader">
+	<div class="wrapper">
+		<div class="">
+			<div class="PageHeader-categoryName">
+  			<%= @tag.tag_name %>
+			</div>
+
+			<div class="PageHeader-actionsContainer">
+				<div class="PageHeader-navigationContainer">
+					<a class="PillButton--text u-backArrow" href="/shop/categories">All Categories</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<%= render '/products/product_nav', locals: {products: @products} %>
+
+<%= render '/products/product_tile', locals: {products: @products} %>

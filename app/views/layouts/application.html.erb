@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Provisioner</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+	<!--<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>-->
+
+
+
+	<div id="header">
+
+		<nav class="navbar navbar-fixed-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="<%= 'active' if current_page?('/products') %>">
+							<%= link_to products_path do %><i class="fa fa-gift" aria-hidden="true"></i> <span class="nav-label">Products</span><% end %>
+						</li>
+
+						<li class="<%= 'active' if current_page?('/tags') %>">
+							<%= link_to tags_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span><% end %>
+						</li>
+
+						<li class="<%= 'active' if current_page?('/collections') %>">
+							<%= link_to collections_path do %><i class="fa fa-globe"></i> <span class="nav-label">Kits</span><% end %>
+						</li>
+					</ul>
+					<div class="logo navbar-brand"> <a href="/" id=""><img width="100" src="/logo.png" /></a></div>
+
+					<ul class="nav navbar-nav navbar-right">
+						<!--<li><input type="text" class="form-control" placeholder="Search"></li>-->
+						<li><% if user_signed_in? %>
+							<%= link_to edit_user_registration_path, :class => 'nav-user-detail fancybox fancybox.ajax ajax'  do%>
+							<strong><%= current_user.handle %></strong>
+							<% end %>
+
+							<%= link_to destroy_user_session_path, method: :delete, :class => 'nav-user-detail'  do%>
+							Logout
+
+							<% end %>
+							</li>
+							<% else %>
+							<li><a href="/users/sign_in" class="fancybox fancybox.ajax ajax">Log in</a></li>
+							<li><a href="/users/sign_up" class="signupbtn fancybox fancybox.ajax ajax">Join</a></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+<%= yield %>
+
+<script type="text/javascript">
+	//ahoy.trackAll();
+	scout();
+$(document).ready(function () {
+	jQuery(function() {
+  $("a.fancybox").fancybox({ parent: "body",'padding':0, 'autoSize':true});
+});
+});
+</script>
+</body>
+</html>
