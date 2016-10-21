@@ -38,7 +38,7 @@ html{
 	background:$primary-background-color;
 	height:100%;
 	margin:0;
-	padding:0
+	padding:0;
 }
 
 body{
@@ -50,7 +50,7 @@ body{
 	font-weight:500;
 	-moz-osx-font-smoothing:grayscale;
 	-webkit-font-smoothing:antialiased;
-	color:#525252
+	color:#525252;
 }
 
 .wrapper{
@@ -130,10 +130,6 @@ select{
 	background-size:48px;
 	padding-right:48px;
 	background-position:right center;}
-
-	#header{
-	margin-bottom:51px;
-	}
 
 	select:hover{background-color:#f2f2f2}
 	textarea{line-height:1.3em;margin:0}
