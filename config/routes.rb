@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   end
 
-  devise_for :users, controllers: { sessions: 'sessions' }
+  devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
 
   get 'products/categories'
   get 'products/recent' => 'products#recent'

@@ -18,9 +18,9 @@
   <div class="product-detail-page js-detail-page" data-product-id="<%= @product.id %>" data-product-name="<%= @product.name %>" itemtype="http://schema.org/Product">
 
   <meta property=”og:title” content=”Your eye-catching title here” />
-  <meta property=”og:url” content=”http://www.yourdomain.com” />
+  <meta property=”og:url” content=”http://www.provisioner.co” />
   <meta property=”og:image” content=”http://www.yourdomain.com/image-name.jpg” />
-  <meta name=”twitter:title” content=”Your title here” />
+  <meta name=”twitter:title” content="<%=@product.name %>" />
   <meta name=”twitter:image” content=”http://www.yourdomain.com/image-name.jpg” />
 
     <div class="product-header">
@@ -62,8 +62,17 @@
 
                 <div class="">
                   <div class="found-by">
-                    Found by
+                    Found by 
+                    <% if @product.discoverer.present? %>
                     <a href="/user/<%= @product.discoverer %>">person's email</a>
+                    <% else %>
+                    the provisioner.co team
+
+                    <% end %>
+
+
+
+
                   </div>
                 </div>
               </div>

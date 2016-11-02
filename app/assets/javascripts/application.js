@@ -16,7 +16,6 @@
 //= require bootstrap-sprockets
 //= require fancybox
 //= require ahoy
-//= require turbolinks
 //= require_tree .
 
 function get_amazon_details() {

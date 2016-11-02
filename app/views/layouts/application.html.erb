@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Provisioner</title>
+  <!-- Turbolinks is disabled by removing from application.js
+  		 Completed because turbolinks is conflicting with fancybox -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,8 +12,6 @@
 <body>
 	<!--<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>-->
-
-
 
 	<div id="header">
 
@@ -56,8 +56,8 @@
 							<% end %>
 							</li>
 							<% else %>
-							<li><a href="/users/sign_in" class="fancybox fancybox.ajax ajax">Log in</a></li>
-							<li><a href="/users/sign_up" class="signupbtn fancybox fancybox.ajax ajax">Join</a></li>
+							<li><a href="/users/sign_in" class="fancybox fancybox.ajax">Log in</a></li>
+							<li><a href="/users/sign_up" class="fancybox fancybox.ajax signupbtn ">Join</a></li>
 							<% end %>
 						</ul>
 					</div>
@@ -72,8 +72,8 @@
 	scout();
 $(document).ready(function () {
 	jQuery(function() {
-  $("a.fancybox").fancybox({ parent: "body",'padding':0, 'autoSize':true});
-});
+  	$("a.fancybox").fancybox({ parent: "body",'padding':0, 'autoSize':false, 'minWidth': 800});
+	});
 });
 </script>
 </body>
