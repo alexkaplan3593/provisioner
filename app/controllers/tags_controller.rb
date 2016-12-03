@@ -5,7 +5,7 @@ class TagsController < GridController
   respond_to :html
 
   def index
-    @tags = Tag.all
+    @tags = Tag.where(:display => true)
     respond_with(@tags)
   end
 
@@ -78,6 +78,6 @@ class TagsController < GridController
     end
 
     def tag_params
-      params.require(:tag).permit(:tag_name, :product_usage, :assoc_tags, :image)
+      params.require(:tag).permit(:tag_name, :product_usage, :assoc_tags, :image, :display, :tag_type)
     end
 end

@@ -30,6 +30,16 @@
     <%= f.text_field :image %>
   </div>
 
+  <div class="field">
+    <%= f.label :display %><br>
+    <%= f.check_box :display %>
+  </div>
+
+    <div class="field">
+    <%= f.label :tag_type %><br>
+    <%= f.select :tag_type, ['person','activity','interest', 'category'], {:include_blank => true}%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

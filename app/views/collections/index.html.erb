@@ -17,9 +17,9 @@
         </select>
       </span>
 
-      <span id="select-tag" class="select-mod">
+      <span id="select-interest" class="select-mod">
         <span class="select-hold"><i class="icon-chevron-down"></i></span>
-        <select id="tag" data-placeholder="interest or skill" class="chosen-select">
+        <select id="interest" data-placeholder="interest or skill" class="chosen-select">
           <option value=""></option>
           <option value="Outdoorsy">Outdoorsy</option>
           <option value="Athletic">Athletic</option>
@@ -66,15 +66,15 @@ $(".chosen-select").chosen({disable_search_threshold: 10});
 
 $("#select-person .chosen-select").on('change', function(evt, params) {
     $('#placeholder-person').html(params.selected);
-    $('#tagline').append(", who is <span id='placeholder-tag'>...</span>");
+    $('#tagline').append(", who is <span id='placeholder-interest'>...</span>");
     $('#select-person').css('display', 'none');
-    $('#select-tag').css('display', 'inline');
+    $('#select-interest').css('display', 'inline');
 });
 
-$("#select-tag .chosen-select").on('change', function(evt, params) {
-    $('#placeholder-tag').html(params.selected);
+$("#select-interest .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-interest').html(params.selected);
     $('#tagline').append(", and enjoys <span id='placeholder-activity'>...</span>");
-    $('#select-tag').css('display', 'none');
+    $('#select-interest').css('display', 'none');
     $('#select-activity').css('display', 'inline');
 
 });
@@ -94,23 +94,18 @@ $('#rdy-btn').on('click', function(){
 
 function get_collections(){
   var person = $('select#person').val();
-  var tag = $('select#tag').val();
+  var interest = $('select#interest').val();
   var activity = $('select#activity').val();
 
 $.ajax({
     url: '/collections/show',
     type: 'POST',
     dataType: 'script',
-    data: {tags: [person,tag,activity]},
+    data: {tags: [person,interest,activity]},
   }).done(function() {
-    console.log("success");
   }).fail(function() {
-    console.log("error");
   }).always(function() {
-    console.log("complete");
   });
 
 }
-
-
 </script>
