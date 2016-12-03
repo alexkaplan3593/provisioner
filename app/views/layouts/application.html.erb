@@ -45,16 +45,25 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						<!--<li><input type="text" class="form-control" placeholder="Search"></li>-->
-						<li><% if user_signed_in? %>
-							<%= link_to edit_user_registration_path, :class => 'nav-user-detail fancybox fancybox.ajax ajax'  do%>
-							<strong><%= current_user.handle %></strong>
-							<% end %>
-
-							<%= link_to destroy_user_session_path, method: :delete, :class => 'nav-user-detail'  do%>
-							Logout
-
-							<% end %>
+						<% if user_signed_in? %>
+							<li>
+								<%= link_to edit_user_registration_path, :class => 'nav-user-detail fancybox fancybox.ajax ajax'  do%>
+									<strong><%= current_user.handle %></strong>
+								<% end %>
 							</li>
+
+							<li>
+								<%= link_to destroy_user_session_path, method: :delete, :class => 'nav-user-detail'  do%>
+									Logout
+								<% end %>
+
+							</li>
+
+
+
+
+
+
 							<% else %>
 							<li><a href="/users/sign_in" class="fancybox fancybox.ajax">Log in</a></li>
 							<li><a href="/users/sign_up" class="fancybox fancybox.ajax signupbtn ">Join</a></li>
@@ -72,7 +81,7 @@
 	scout();
 $(document).ready(function () {
 	jQuery(function() {
-  	$("a.fancybox").fancybox({ parent: "body",'padding':0, 'autoSize':false, 'minWidth': 800});
+  	$("a.fancybox").fancybox({ parent: "body",'padding':15, 'autoSize':false, 'minWidth': 960});
 	});
 });
 </script>

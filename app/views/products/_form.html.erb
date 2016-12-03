@@ -1,3 +1,5 @@
+<div class="row">
+<div class="col-lg-offset-2 col-lg-8">
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +18,7 @@
     <%= f.text_field :url %>
   </div>
 
-  <button type="button" onclick="get_amazon_details()">Click me</button>
+  <button class="button" type="button" onclick="get_amazon_details()">Get Details!</button>
 
     <div class="field">
     <%= f.label :name %><br>
@@ -44,7 +46,7 @@
 
     <div class="field">
     <%= f.label :tags %><br>
-    <%= f.collection_select(:tag_ids, @tags, :id, :tag_name, {:prompt => true}) %>
+    <%= f.collection_select(:tag_ids, @tags, :id, :tag_name, {:prompt => true}, {:class=>"chosen-select"}) %>
 
   </div>
 
@@ -53,7 +55,10 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+</div>
 
 <script type="text/javascript">
+ $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
     //$('#product_url').change(get_amazon_details);
 </script>

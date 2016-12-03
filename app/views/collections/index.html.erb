@@ -1,29 +1,116 @@
-<h1>Listing collections</h1>
+<div class="wrapper collection-build">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
 
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>User</th>
-      <th>Collection name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <h2 id="tagline"> A Gift For My <span id="placeholder-person">...</span></h2>
+    
+      <span id="select-person" class="select-mod">
+        <span class="select-hold"> <i class="icon-chevron-down"></i></span>
+        <select id="person" data-placeholder="person" class="chosen-select">
+          <option value=""></option>
+          <option value="Friend">Friend</option>
+          <option value="Pet">Pet</option>
+          <option value="Coworker">Coworker</option>
+          <option value="Neighbor">Neighbor</option>
+          <option value="Parent">Parent</option>
+          <option value="Child">Child</option>
+        </select>
+      </span>
 
-  <tbody>
+      <span id="select-tag" class="select-mod">
+        <span class="select-hold"><i class="icon-chevron-down"></i></span>
+        <select id="tag" data-placeholder="interest or skill" class="chosen-select">
+          <option value=""></option>
+          <option value="Outdoorsy">Outdoorsy</option>
+          <option value="Athletic">Athletic</option>
+          <option value="DIY">DIY</option>
+          <option value="intelligent">intelligent</option>
+          <option value="artsy">artsy</option>
+          <option value="technical">technical</option>
+          <option value="creative">creative</option>
+        </select>
+      </span>
+
+      <span id="select-activity" class="select-mod">
+        <span class="select-hold"><i class="icon-chevron-down"></i></span>
+        <select id="activity" data-placeholder="activity or hobby" class="chosen-select">
+            <option value=""></option>
+            <option value="Travel">Travel</option>
+            <option value="Music">Music</option>
+
+            <option value="Building">Building</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Walking">Walking</option>
+            <option value="Cars">Cars</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertaining">Entertaining</option>
+            <option value="Reading">Reading</option>
+        </select>
+      </span>
+    </div>
+  </div>
+  <button style="display:none;" id="rdy-btn" type="button" class="btn btn-primary">Go!</button>
+</div>
+
+<div class="row">
+<div id="collection-select">
     <% @collections.each do |collection| %>
-      <tr>
-        <td><%= collection.product_id %></td>
-        <td><%= collection.user_id %></td>
-        <td><%= collection.collection_name %></td>
-        <td><%= link_to 'Show', collection %></td>
-        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    there is a collection here
     <% end %>
-  </tbody>
-</table>
+</div>
+</div>
 
-<br>
+<script>
+//enable
+$(".chosen-select").chosen({disable_search_threshold: 10});
 
-<%= link_to 'New Collection', new_collection_path %>
+$("#select-person .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-person').html(params.selected);
+    $('#tagline').append(", who is <span id='placeholder-tag'>...</span>");
+    $('#select-person').css('display', 'none');
+    $('#select-tag').css('display', 'inline');
+});
+
+$("#select-tag .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-tag').html(params.selected);
+    $('#tagline').append(", and enjoys <span id='placeholder-activity'>...</span>");
+    $('#select-tag').css('display', 'none');
+    $('#select-activity').css('display', 'inline');
+
+});
+
+$("#select-activity .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-activity').html(params.selected);
+    $('#tagline').append(".");
+    $('#select-activity').css('display', 'none');
+
+    $('#rdy-btn').css('display', 'inline');
+
+});
+
+$('#rdy-btn').on('click', function(){
+  get_collections();
+});
+
+function get_collections(){
+  var person = $('select#person').val();
+  var tag = $('select#tag').val();
+  var activity = $('select#activity').val();
+
+$.ajax({
+    url: '/collections/show',
+    type: 'POST',
+    dataType: 'script',
+    data: {tags: [person,tag,activity]},
+  }).done(function() {
+    console.log("success");
+  }).fail(function() {
+    console.log("error");
+  }).always(function() {
+    console.log("complete");
+  });
+
+}
+
+
+</script>

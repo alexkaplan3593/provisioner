@@ -10,49 +10,58 @@
 
 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-
 <div class="inline-box">
-<h5 class="js-login-form-title">Join to like and add products.</h5>
-<div class="sign-up-disambiguation">
-<div class="form-contained">
-<div class="sign-up-links field-container">
-<a class="button juicy twitter" tabindex="1" href="/auth/twitter">Connect with Twitter</a>
+  <h5 class="js-login-form-title">Join to like and add products.</h5>
+  
+  <div class="row sign-up-disambiguation">
+    <div class="col-sm-6 form-contained">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-<a class="button juicy facebook fb-login-button" href="/auth/facebook">Connect with Facebook</a>
+    <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
 
-<a class="button juicy email" tabindex="3" href="/create_account">Sign up with Email</a>
-</div>
-</div>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="sign-up-links field-container">
+        <a class="btn btn-block btn-social btn-lg btn-facebook">
+          <span class="fa fa-facebook"></span> Sign up with Facebook
+        </a>
+
+        <a class="btn btn-block btn-social btn-lg btn-google">
+          <span class="fa fa-google"></span> Sign up with Google
+        </a>
+
+        <a class="btn btn-block btn-social btn-lg btn-instagram">
+          <span class="fa fa-email"></span> Sign up with email
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="form-divider"></div>
-<div class="form-footnote">
-<a class="text-button sign-in fancybox fancybox.ajax ajax" tabindex="4" href="/login?source=Log+in+page"><span>I already have an account</span>
-</a></div>
-</div>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="form-footnote">
+    <a class="text-button sign-in fancybox fancybox.ajax ajax" tabindex="4" href="/users/sign-in"><span>I already have an account</span>
+    </a>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+</div> 

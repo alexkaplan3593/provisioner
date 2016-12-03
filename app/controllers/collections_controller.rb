@@ -8,6 +8,10 @@ class CollectionsController < ApplicationController
     respond_with(@collections)
   end
 
+  def build
+    @products = Product.all 
+  end
+
   def show
     respond_with(@collection)
   end

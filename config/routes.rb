@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :collections
+  post 'collections/show' => 'collections#build'
 
   resources :likes
 

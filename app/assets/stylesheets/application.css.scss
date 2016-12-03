@@ -11,9 +11,12 @@
  * file per style scope.
  *
  *= require fancybox
+ *= require chosen/chosen.css
  *= require_tree .
  *= require_self
  */
+
+
 
 $primary-color: rgba(38,119,187,1); /*#2fdab8*/
 $primary-hover-color: #0C487A;
@@ -61,6 +64,10 @@ body{
 	padding:0 42px;
 	position:relative;
 	width:100%;
+}
+
+#header {
+	padding-bottom: 60px;
 }
 
 body,input,textarea,button{font-size:16px}
@@ -250,7 +257,6 @@ select{
     color: #adadad;
     line-height: 20px;
     margin: 0 5px;
-    display: block;
     transition-property: font-size, color, margin;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
@@ -261,7 +267,6 @@ select{
     color: black;
     line-height: 20px;
     margin: 0 5px;
-    display: block;
     transition-property: font-size, color, margin;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
@@ -395,13 +400,13 @@ a.button.full-width,.button.full-width,input[type=submit].full-width{font-size:2
 .button.sign-in:active{background-color:#0068b3}
 
 /* Fancy Box */
-.fancybox-skin {
+.fancybox-opened .fancybox-skin {
+	box-shadow:none;
 	position: relative;
 	background: white;
 	color: #444;
 	text-shadow: none;
 	border-radius: 0px;
-	padding:0px;
 }
 
 .fancybox-inner>.wrapper{
@@ -700,6 +705,21 @@ transition-timing-function:ease-in-out;
 	.InfiniteScrollFooter--fullWidth .LoadMoreButton:hover{background-color:#d9d9d9}
 	.InfiniteScrollFooter--fullWidth .LoadMoreButton:active{background-color:#bfbfbf}
 
+.collection-build{
+	  position: relative;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 40px;
+    min-height:300px;
+    padding: 36px 36px 60px 36px;
+    box-shadow: 0px 2px 6px 1px rgba(0,0,0,0.08);
+    width: 100%;
+    -webkit-transition: opacity 100ms;
+    transition: opacity 100ms;
+}
+.fancybox-inner>.wrapper{padding:0;max-width:1292px}
 @media only screen and (max-width: 540px){.wrapper{padding:0 15px}}
 .wrapper.about{min-width:inherit}
 @media only screen and (max-width: 540px){.wrapper.about{padding-left:0;padding-right:0}}
@@ -854,3 +874,47 @@ form.new_user {padding: 0px 5vw;}
 	p,h2,h3{orphans:3;widows:3}
 	h2,h3{page-break-after:avoid}
 }
+
+
+
+
+
+/* Gift builder */
+.select-hold{
+	font-size: 18px;
+  font-family: "AvenirNext-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: absolute;
+  line-height: 18px;
+  width: 100%;
+  left: 0;
+  bottom: 15px;
+  display: block;
+  color: #d7d7d7;
+}
+
+.select-mod{
+    background: #eee;
+    width: 350px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin:5px;
+}
+
+#tagline{
+
+}
+
+#placeholder-person, #placeholder-tag, #placeholder-activity{
+	color:$primary-color;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
