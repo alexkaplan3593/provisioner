@@ -46,7 +46,7 @@
 
     <div class="field">
     <%= f.label :tags %><br>
-    <%= f.collection_select(:tag_ids, @tags, :id, :tag_name, {:prompt => true}, {:class=>"chosen-select"}) %>
+    <%= f.collection_select(:tag_ids, @tags, :id, :tag_name, {:prompt => true}, {:class=>"chosen-select", 'multiple' => 'true'}) %>
 
   </div>
 
