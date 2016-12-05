@@ -5,6 +5,9 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.all
+    if params[:tags]
+      puts "we have tags"
+    end
     respond_with(@collections)
   end
 
@@ -46,6 +49,6 @@ class CollectionsController < ApplicationController
     end
 
     def collection_params
-      params.require(:collection).permit(:product_id, :user_id, :collection_name)
+      params.require(:collection).permit(:product_id, :user_id, :collection_name, :tags)
     end
 end
