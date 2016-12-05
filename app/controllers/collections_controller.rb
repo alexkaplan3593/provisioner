@@ -1,29 +1,17 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :js
 
   def index
     @collections = Collection.all
 
-    @products = []
-    @collection_tags = []
-
     if params[:tags]
       tags = params[:tags]
-
-      tags.each do |tag|
-        puts 'tag is ' + tag.to_s
-        @final_tag = Tag.where("LOWER(tag_name) = ?", tag).first
-        puts @final_tag.id
-        if @final_tag.present?
-          @collection_tags << @final_tag.tag_name
-         @products += @final_tag.products
-        end
-
-      end
+      @products = Collection.generate_and_set_products(tags)
       render :show
     end
+
   end
 
   def gift_builder
@@ -31,7 +19,7 @@ class CollectionsController < ApplicationController
   end
 
   def build
-    @products = Product.all 
+    @products = Collection.generate_and_set_products(params[:tags])
   end
 
   def show
