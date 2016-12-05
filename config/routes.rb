@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :collections
+  resources :tags
   post 'collections/show' => 'collections#build'
+  get 'collections/giftbuilder' => 'collections#gift_builder'
 
   resources :likes
 
-  resources :tags do
+  resources :collections do
     get :least_to_most
     get :most_to_least
     get :recent

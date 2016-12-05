@@ -5,10 +5,29 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.all
+
+    @products = []
+    @collection_tags = []
+
     if params[:tags]
-      puts "we have tags"
+      tags = params[:tags]
+
+      tags.each do |tag|
+        puts 'tag is ' + tag.to_s
+        @final_tag = Tag.where("LOWER(tag_name) = ?", tag).first
+        puts @final_tag.id
+        if @final_tag.present?
+          @collection_tags << @final_tag.tag_name
+         @products += @final_tag.products
+        end
+
+      end
+      render :show
     end
-    respond_with(@collections)
+  end
+
+  def gift_builder
+
   end
 
   def build
@@ -16,10 +35,17 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    respond_with(@collection)
+    @tags = @collection.tags
+    @products = []
+
+    @tags.each do |tag|
+      @products += tag.products
+    end
+
   end
 
   def new
+    @tags = Tag.all
     @collection = Collection.new
     respond_with(@collection)
   end
@@ -45,10 +71,10 @@ class CollectionsController < ApplicationController
 
   private
     def set_collection
-      @collection = Collection.find(params[:id])
+      @collection = Collection.friendly.find(params[:id])
     end
 
     def collection_params
-      params.require(:collection).permit(:product_id, :user_id, :collection_name, :tags)
+      params.require(:collection).permit(:product_id, :user_id, :image, :collection_name, :tags)
     end
 end

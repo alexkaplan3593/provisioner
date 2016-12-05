@@ -1,0 +1,110 @@
+<div class="wrapper collection-build">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+      <h2 id="tagline"> A Gift For My <span id="placeholder-person">...</span></h2>
+    
+      <span id="select-person" class="select-mod">
+        <span class="select-hold"> <i class="icon-chevron-down"></i></span>
+        <select id="person" data-placeholder="person" class="chosen-select">
+          <option value=""></option>
+          <option value="Friend">Friend</option>
+          <option value="Pet">Pet</option>
+          <option value="Coworker">Coworker</option>
+          <option value="Neighbor">Neighbor</option>
+          <option value="Parent">Parent</option>
+          <option value="Child">Child</option>
+        </select>
+      </span>
+
+      <span id="select-interest" class="select-mod">
+        <span class="select-hold"><i class="icon-chevron-down"></i></span>
+        <select id="interest" data-placeholder="interest or skill" class="chosen-select">
+          <option value=""></option>
+          <option value="Outdoorsy">Outdoorsy</option>
+          <option value="Athletic">Athletic</option>
+          <option value="DIY">DIY</option>
+          <option value="intelligent">intelligent</option>
+          <option value="artsy">artsy</option>
+          <option value="technical">technical</option>
+          <option value="creative">creative</option>
+        </select>
+      </span>
+
+      <span id="select-activity" class="select-mod">
+        <span class="select-hold"><i class="icon-chevron-down"></i></span>
+        <select id="activity" data-placeholder="activity or hobby" class="chosen-select">
+            <option value=""></option>
+            <option value="Travel">Travel</option>
+            <option value="Music">Music</option>
+
+            <option value="Building">Building</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Walking">Walking</option>
+            <option value="Cars">Cars</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertaining">Entertaining</option>
+            <option value="Reading">Reading</option>
+        </select>
+      </span>
+    </div>
+  </div>
+  <button style="display:none;" id="rdy-btn" type="button" class="btn btn-primary">Go!</button>
+</div>
+
+<div style="padding-top:45px;" class="wrapper">
+  <div class="cards-container">
+    <div id="collection-select">
+    </div>
+  </div>
+</div>
+
+<script>
+//enable
+$(".chosen-select").chosen({disable_search_threshold: 10});
+
+$("#select-person .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-person').html(params.selected);
+    $('#tagline').append(", who is <span id='placeholder-interest'>...</span>");
+    $('#select-person').css('display', 'none');
+    $('#select-interest').css('display', 'inline');
+});
+
+$("#select-interest .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-interest').html(params.selected);
+    $('#tagline').append(", and enjoys <span id='placeholder-activity'>...</span>");
+    $('#select-interest').css('display', 'none');
+    $('#select-activity').css('display', 'inline');
+
+});
+
+$("#select-activity .chosen-select").on('change', function(evt, params) {
+    $('#placeholder-activity').html(params.selected);
+    $('#tagline').append(".");
+    $('#select-activity').css('display', 'none');
+
+    $('#rdy-btn').css('display', 'inline');
+
+});
+
+$('#rdy-btn').on('click', function(){
+  get_collections();
+});
+
+function get_collections(){
+  var person = $('select#person').val();
+  var interest = $('select#interest').val();
+  var activity = $('select#activity').val();
+
+$.ajax({
+    url: '/collections/show',
+    type: 'POST',
+    dataType: 'script',
+    data: {tags: [person,interest,activity]},
+  }).done(function() {
+  }).fail(function() {
+  }).always(function() {
+  });
+
+}
+</script>

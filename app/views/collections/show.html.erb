@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="PageHeader">
+	<div class="wrapper">
+		<div class="">
+			<div class="PageHeader-categoryName">
+  			<%
+  				if @collection.present?
+  					header = @collection.collection_name
+  				
+  				elsif @collection_tags.present?
+  					header = "Viewing gifts for "
+  					@collection_tags.each do |collection_tag|
+  						header += collection_tag + ','
+  					end
+					end
 
-<p>
-  <strong>Product:</strong>
-  <%= @collection.product_id %>
-</p>
+  			%>
+  			<%= header %>
+			</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @collection.user_id %>
-</p>
+			<div class="PageHeader-actionsContainer">
+				<div class="PageHeader-navigationContainer">
+					<a class="PillButton--text u-backArrow" href="/shop/categories">All Categories</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<p>
-  <strong>Collection name:</strong>
-  <%= @collection.collection_name %>
-</p>
+<%= render '/products/product_nav', locals: {products: @products} %>
 
-<%= link_to 'Edit', edit_collection_path(@collection) %> |
-<%= link_to 'Back', collections_path %>
+<%= render '/products/product_tile', locals: {products: @products} %>

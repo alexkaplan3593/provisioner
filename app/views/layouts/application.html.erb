@@ -34,11 +34,11 @@
 						</li>
 
 						<li class="<%= 'active' if current_page?('/tags') %>">
-							<%= link_to tags_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span><% end %>
+							<%= link_to collections_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span><% end %>
 						</li>
 
 						<li class="<%= 'active' if current_page?('/collections') %>">
-							<%= link_to collections_path do %><i class="fa fa-globe"></i> <span class="nav-label">Gift Finder</span><% end %>
+							<%= link_to collections_giftbuilder_path do %><i class="fa fa-globe"></i> <span class="nav-label">Gift Finder</span><% end %>
 						</li>
 					</ul>
 					<div class="logo navbar-brand"> <a href="/" id=""><img width="100" src="/logo.png" /></a></div>
