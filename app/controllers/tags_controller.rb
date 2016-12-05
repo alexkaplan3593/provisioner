@@ -5,7 +5,7 @@ class TagsController < GridController
   respond_to :html
 
   def index
-    @tags = Tag.where(:display => true)
+    @tags = Tag.all
     respond_with(@tags)
   end
 
