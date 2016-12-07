@@ -1,4 +1,6 @@
 <h2 class="text-center">Sign up</h2>
+  <h5 class="text-center">Join to like and add products.</h5>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -11,7 +13,6 @@
 
 
 <div class="inline-box">
-  <h5 class="js-login-form-title">Join to like and add products.</h5>
   
   <div class="row sign-up-disambiguation">
     <div class="col-sm-6 form-contained">
@@ -19,21 +20,18 @@
       <%= devise_error_messages! %>
 
     <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, placeholder: "email", autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, placeholder: "password", autocomplete: "off" %>
+                <% if @minimum_password_length %>
+        <span class="small">(<%= @minimum_password_length %> characters minimum)</span>
+        <% end %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, placeholder: "password confirm", autocomplete: "off" %>
       </div>
 
       <div class="actions">
@@ -52,9 +50,9 @@
           <span class="fa fa-google"></span> Sign up with Google
         </a>
 
-        <a class="btn btn-block btn-social btn-lg btn-instagram">
+       <!-- <a class="btn btn-block btn-social btn-lg btn-instagram">
           <span class="fa fa-email"></span> Sign up with email
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

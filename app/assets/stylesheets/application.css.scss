@@ -150,8 +150,9 @@ select{
 	@media only screen and (max-width: 540px){.form-contained .field-container{margin-bottom:16px}}
 	.form-contained label{color:#999999;display:block;font-size:20px;font-weight:500;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin:10px auto -4px;padding:0 14px;text-align:left;line-height:1.2}
 	@media only screen and (max-width: 540px){.form-contained label{font-size:16px}}
+	
 	.form-contained label.ie-only{display:none}.form-contained textarea{resize:vertical}
-	.form-contained input,.form-contained textarea{margin:10px auto 25px}
+	.form-contained input,.form-contained textarea{margin:10px auto;}
 	@media only screen and (max-width: 540px){.form-contained input,.form-contained textarea{margin-bottom:16px}}
 	.form-contained input[type="submit"]{padding-left:40px;padding-right:40px}
 	.field-container{position:relative}
@@ -846,14 +847,27 @@ a.product-link{text-decoration:none}
 
 /*sign up screen */
 .sign-up-disambiguation input[disabled]{opacity:0.4}
-.inline-box{background-color:white;margin:0 auto;width:75%; max-width:680px;padding:20px 0vw 15px;text-align:center}
-.inline-box h2{margin-bottom:48px;margin-top:36px}
-.inline-box.sign-up{padding-top:10px;margin-top:80px;padding-left:0;padding-right:0;padding-bottom:0;max-width:830px}
-.sign-up-links{margin-top:64px}
+.inline-box{
+	background-color:white;
+	padding:20px 0vw 15px;
+	text-align:center;
+}
+.inline-box h2{
+	margin-bottom:48px;
+	margin-top:36px;
+}
+.inline-box.sign-up{
+	padding-top:10px;
+	margin-top:80px;
+	padding-left:0;
+	padding-right:0;
+	padding-bottom:0;
+	max-width:830px;
+}
+
+.sign-up-links{margin-top:48px}
 .sign-up-links a {margin:10px;}
 form.new_user {padding: 0px 5vw;}
-
-
 
 .product-detail-page{position:relative;background-color:white;overflow-x:hidden}
 .product-secondary-container{width:100%;position:relative}

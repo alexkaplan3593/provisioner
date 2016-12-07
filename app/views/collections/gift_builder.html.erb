@@ -48,6 +48,7 @@
         </select>
       </span>
     </div>
+    <div class="col-sm-2"> <i> </div>
   </div>
   <button style="display:none;" id="rdy-btn" type="button" class="btn btn-primary">Go!</button>
 </div>
@@ -67,14 +68,14 @@ $("#select-person .chosen-select").on('change', function(evt, params) {
     $('#placeholder-person').html(params.selected);
     $('#tagline').append(", who is <span id='placeholder-interest'>...</span>");
     $('#select-person').css('display', 'none');
-    $('#select-interest').css('display', 'inline');
+    $('#select-interest').css('display', 'inline-block');
 });
 
 $("#select-interest .chosen-select").on('change', function(evt, params) {
     $('#placeholder-interest').html(params.selected);
     $('#tagline').append(", and enjoys <span id='placeholder-activity'>...</span>");
     $('#select-interest').css('display', 'none');
-    $('#select-activity').css('display', 'inline');
+    $('#select-activity').css('display', 'inline-block');
 
 });
 
