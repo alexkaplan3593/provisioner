@@ -62,20 +62,37 @@ function get_amazon_details() {
 	}
 }
 
+	function go(key){
+		img = key.src;
+		$("#product_image").val(img);
+		$("#image_field").html("<img src='"+img+"' />");
+	}
+
 	function put_amazon_details(response){
-		console.log(response);
 	  var item_price = response.getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
 	 	var vendor =  response.getElementsByTagName("Brand")[0].childNodes[0].nodeValue;
 	 	var name =  response.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
-	 	var img =  response.getElementsByTagName("LargeImage")[0].childNodes[0].childNodes[0].nodeValue;
+	 	var imgGallery = response.getElementsByTagName("ImageSets")[0].childNodes;
+
+	 	for (var i = 0; i < imgGallery.length; i++) {
+	 		if (i===0){
+	 			active_status = 'active';
+	 		}
+	 		else{
+	 			active_status = '';
+	 		}
+
+	 		var img_url = imgGallery[i].getElementsByTagName("LargeImage")[0].childNodes[0].textContent;
+	 		var plain_text = '<div class="item '+active_status+'"><img onclick="go(this);" alt="image" class="img-responsive" src="'+img_url+'"></div>';
+ 			$('#carousel-drop').append(plain_text);
+	 	}
 
 	 	item_price = parseInt(item_price)/100;
 
 	  $("#product_name").val(name);
 	  $("#product_price").val(item_price);
 	  $("#product_vendor").val(vendor);
-	  $("#product_image").val(img);
-		$("#image_field").html("<img src='"+img+"' />");
+
 	}
 
 	function like_product(product_id, user_id){

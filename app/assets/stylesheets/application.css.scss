@@ -195,6 +195,10 @@ select{
 	animation-timing-function:linear;
 }
 
+.btn:hover{
+	color:white;
+	text-decoration: none;
+}
 .top-right{position:absolute;top:0;right:0}
 .ProductCard{display:inline-block;margin:2%;min-width:270px;overflow:hidden;position:relative;text-align:left;vertical-align:top;width:29.333333333%;box-shadow:0px 3px 8px -4px rgba(0,0,0,0.15)}
 .ProductCard-actionsContainer{display:-ms-flexbox;display:-webkit-box;display:flex;display:-webkit-flex;-ms-flex-direction:row;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}
@@ -920,6 +924,11 @@ form.new_user {padding: 0px 5vw;}
 #placeholder-person, #placeholder-interest, #placeholder-activity{
 	color:$primary-color;
 	font-weight:bold;
+}
+
+.carousel-control.left, .carousel-control.right{
+	background:transparent;
+	background-image:none;
 }
 
 

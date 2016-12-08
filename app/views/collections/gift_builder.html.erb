@@ -1,52 +1,28 @@
 <div class="wrapper collection-build">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
+        <%= form_for Collection.new do |f| %>
 
       <h2 id="tagline"> A Gift For My <span id="placeholder-person">...</span></h2>
-    
+      
       <span id="select-person" class="select-mod">
         <span class="select-hold"> <i class="icon-chevron-down"></i></span>
-        <select id="person" data-placeholder="person" class="chosen-select">
-          <option value=""></option>
-          <option value="Friend">Friend</option>
-          <option value="Pet">Pet</option>
-          <option value="Coworker">Coworker</option>
-          <option value="Neighbor">Neighbor</option>
-          <option value="Parent">Parent</option>
-          <option value="Child">Child</option>
-        </select>
+        
+        <%= f.collection_select(:tag_ids, @person_tags, :tag_name, :tag_name, {:prompt => "person"}, {:class=>"chosen-select", :id=>"person", "data-placeholder" => "person"}) %>
       </span>
 
       <span id="select-interest" class="select-mod">
         <span class="select-hold"><i class="icon-chevron-down"></i></span>
-        <select id="interest" data-placeholder="interest or skill" class="chosen-select">
-          <option value=""></option>
-          <option value="Outdoorsy">Outdoorsy</option>
-          <option value="Athletic">Athletic</option>
-          <option value="DIY">DIY</option>
-          <option value="intelligent">intelligent</option>
-          <option value="artsy">artsy</option>
-          <option value="technical">technical</option>
-          <option value="creative">creative</option>
-        </select>
+        <%= f.collection_select(:tag_ids, @interest_tags, :tag_name, :tag_name, {:prompt => "interest or skill"}, {:class=>"chosen-select", :id=>"interest or skill", "data-placeholder" => "interest"}) %>
       </span>
 
       <span id="select-activity" class="select-mod">
         <span class="select-hold"><i class="icon-chevron-down"></i></span>
-        <select id="activity" data-placeholder="activity or hobby" class="chosen-select">
-            <option value=""></option>
-            <option value="Travel">Travel</option>
-            <option value="Music">Music</option>
-
-            <option value="Building">Building</option>
-            <option value="Cooking">Cooking</option>
-            <option value="Walking">Walking</option>
-            <option value="Cars">Cars</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Entertaining">Entertaining</option>
-            <option value="Reading">Reading</option>
-        </select>
+        <%= f.collection_select(:tag_ids, @activity_tags, :tag_name, :tag_name, {:prompt => "activity or hobby"}, {:class=>"chosen-select", :id=>"activity", "data-placeholder" => "activity or hobby"}) %>
       </span>
+
+      <% end %>
+
     </div>
     <div class="col-sm-2"> <i> </div>
   </div>

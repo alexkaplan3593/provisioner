@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @collections = Collection.all
+    @collections = Collection.where(:display => false)
 
     if params[:tags]
       tags = params[:tags]
@@ -15,7 +15,9 @@ class CollectionsController < ApplicationController
   end
 
   def gift_builder
-
+      @person_tags = Tag.where(:tag_type => "person")
+      @interest_tags = Tag.where(:tag_type => "person")
+      @activity_tags = Tag.where(:tag_type => "person")
   end
 
   def build
@@ -63,6 +65,6 @@ class CollectionsController < ApplicationController
     end
 
     def collection_params
-      params.require(:collection).permit(:product_id, :user_id, :image, :collection_name, :tags)
+      params.require(:collection).permit(:product_id, :user_id, :image, :collection_name, :tags, :display)
     end
 end
