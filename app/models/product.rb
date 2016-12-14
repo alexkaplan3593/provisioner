@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
 		  "Service" => "AWSECommerceService",
 		  "Operation" => "ItemLookup",
 		  "AWSAccessKeyId" => "AKIAJPGDTJP63IHSIDHA",
-		  "AssociateTag" => "kwiz-20",
+		  "AssociateTag" => "provis08-20",
 		  "ItemId" => passed_product_id.to_str,
 		  "IdType" => "ASIN",
 		  "ResponseGroup" => "Images,ItemAttributes,Offers"

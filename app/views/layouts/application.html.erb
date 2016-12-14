@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Provisioner</title>
-  <!-- Turbolinks is disabled by removing from application.js
-  		 Completed because turbolinks is conflicting with fancybox -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -48,7 +46,7 @@
 						<% if user_signed_in? %>
 							<li>
 								<%= link_to edit_user_registration_path, :class => 'nav-user-detail fancybox fancybox.ajax ajax'  do%>
-									<strong><%= current_user.handle %></strong>
+									<strong><%= current_user.first_name.present? ? current_user.first_name : current_user.email%></strong>
 								<% end %>
 							</li>
 
@@ -81,7 +79,7 @@
 	scout();
 $(document).ready(function () {
 	jQuery(function() {
-  	$("a.fancybox").fancybox({ parent: "body",'padding':15, 'autoSize':false, 'minWidth': 960});
+  	$("a.fancybox").fancybox({ parent: "body",'padding':0, 'autoSize':false, 'minWidth': 960});
 	});
 });
 </script>

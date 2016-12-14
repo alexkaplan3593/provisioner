@@ -121,7 +121,7 @@ class ProductsController < GridController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:price, :name, :image, :vendor, :discoverer, :url, {:tag_ids=> []})
+      params.require(:product).permit(:price, :name, :prime,:image, :vendor, :discoverer, :url, {:tag_ids=> []})
     end
 
 end

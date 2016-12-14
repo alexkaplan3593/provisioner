@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
          has_many :products, through: :collections
          has_many :collections
 
+	def fullname
+  	"#{first_name} #{last_name}"
+	end
+
 end

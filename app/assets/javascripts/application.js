@@ -69,10 +69,20 @@ function get_amazon_details() {
 	}
 
 	function put_amazon_details(response){
+		console.log(response);
 	  var item_price = response.getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
 	 	var vendor =  response.getElementsByTagName("Brand")[0].childNodes[0].nodeValue;
 	 	var name =  response.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
 	 	var imgGallery = response.getElementsByTagName("ImageSets")[0].childNodes;
+	 	var offers_as_s = response.getElementsByTagName("TotalOffers")[0].childNodes[0].nodeValue;
+ 		var offers = parseInt(offers_as_s);
+
+	 	if (offers >= 1){
+	 	var first_offer = response.getElementsByTagName("OfferListing")[0];
+	 	var prime = first_offer.getElementsByTagName("IsEligibleForPrime")[0].childNodes[0].nodeValue;
+	 	console.log(prime);
+	 	}
+
 
 	 	for (var i = 0; i < imgGallery.length; i++) {
 	 		if (i===0){
@@ -92,6 +102,7 @@ function get_amazon_details() {
 	  $("#product_name").val(name);
 	  $("#product_price").val(item_price);
 	  $("#product_vendor").val(vendor);
+	  $("#product_prime").val(prime);
 
 	}
 
