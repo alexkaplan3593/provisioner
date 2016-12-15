@@ -8,17 +8,17 @@
       <span id="select-person" class="select-mod">
         <span class="select-hold"> <i class="icon-chevron-down"></i></span>
         
-        <%= f.collection_select(:tag_ids, @person_tags, :tag_name, :tag_name, {:prompt => "person"}, {:class=>"chosen-select", :id=>"person", "data-placeholder" => "person"}) %>
+        <%= f.collection_select(:tag_ids, @person_tags, :tag_name, :tag_name, {:prompt => ""}, {:class=>"chosen-select", :id=>"person", "data-placeholder" => "person"}) %>
       </span>
 
       <span id="select-interest" class="select-mod">
         <span class="select-hold"><i class="icon-chevron-down"></i></span>
-        <%= f.collection_select(:tag_ids, @interest_tags, :tag_name, :tag_name, {:prompt => "interest or skill"}, {:class=>"chosen-select", :id=>"interest or skill", "data-placeholder" => "interest"}) %>
+        <%= f.collection_select(:tag_ids, @interest_tags, :tag_name, :tag_name, {:prompt => ""}, {:class=>"chosen-select", :id=>"interest or skill", "data-placeholder" => "interest"}) %>
       </span>
 
       <span id="select-activity" class="select-mod">
         <span class="select-hold"><i class="icon-chevron-down"></i></span>
-        <%= f.collection_select(:tag_ids, @activity_tags, :tag_name, :tag_name, {:prompt => "activity or hobby"}, {:class=>"chosen-select", :id=>"activity", "data-placeholder" => "activity or hobby"}) %>
+        <%= f.collection_select(:tag_ids, @activity_tags, :tag_name, :tag_name, {:prompt => ""}, {:class=>"chosen-select", :id=>"activity", "data-placeholder" => "activity or hobby"}) %>
       </span>
 
       <% end %>

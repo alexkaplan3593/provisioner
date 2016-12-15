@@ -68,7 +68,7 @@ body{
 }
 
 #header {
-	padding-bottom: 60px;
+	padding-bottom: 50px;
 }
 
 body,input,textarea,button{font-size:16px}
@@ -281,7 +281,7 @@ select{
 .nav-level{
 	position:relative;
 	min-height:68px;
-	margin:50px 0px 6px 0px;
+	margin:24px 0px 6px 0px;
 	display:flex;
 	flex-direction:row;
 	align-items:center;
@@ -303,6 +303,10 @@ select{
 	flex-wrap:wrap;
 	align-items:center;
 	margin:24px auto;}
+
+	.nav-user-detail{
+	font-size:14px;
+	}
 
 @media only screen and (max-width: 680px){.nav-level-layout{justify-content:center}}
 

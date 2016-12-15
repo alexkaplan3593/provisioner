@@ -16,8 +16,8 @@ class CollectionsController < ApplicationController
 
   def gift_builder
       @person_tags = Tag.where(:tag_type => "person")
-      @interest_tags = Tag.where(:tag_type => "person")
-      @activity_tags = Tag.where(:tag_type => "person")
+      @interest_tags = Tag.where(:tag_type => "activity")
+      @activity_tags = Tag.where(:tag_type => "interest")
   end
 
   def build
