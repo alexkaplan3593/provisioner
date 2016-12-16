@@ -70,7 +70,7 @@ function get_amazon_details() {
 
 	function put_amazon_details(response){
 		console.log(response);
-	  var item_price = response.getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
+		var item_price;
 	 	var vendor =  response.getElementsByTagName("Brand")[0].childNodes[0].nodeValue;
 	 	var name =  response.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
 	 	var imgGallery = response.getElementsByTagName("ImageSets")[0].childNodes;
@@ -80,7 +80,14 @@ function get_amazon_details() {
 	 	if (offers >= 1){
 	 	var first_offer = response.getElementsByTagName("OfferListing")[0];
 	 	var prime = first_offer.getElementsByTagName("IsEligibleForPrime")[0].childNodes[0].nodeValue;
+	 	item_price = first_offer.getElementsByTagName("Price")[0].getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
+	 	console.log(item_price);
 	 	console.log(prime);
+	 	}
+
+	 	else {
+	 	item_price = response.getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
+
 	 	}
 
 
