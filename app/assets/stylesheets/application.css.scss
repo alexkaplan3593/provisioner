@@ -786,7 +786,7 @@ transform:translate3d(0, 0, 0)
 @media only screen and (max-width: 540px){.PageHeader-brandName,.PageHeader-categoryName{-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;font-size:28px}}
 @media only screen and (max-width: 400px){.PageHeader-brandName,.PageHeader-categoryName{font-size:24px}}
 
-.SignupMessage{
+.SignupMessage, .CalloutMessage{
 	display:block;
 	width:100%;
 	background-color:$sign-up-msg-color;
@@ -798,6 +798,13 @@ transform:translate3d(0, 0, 0)
 	justify-content:center;
 	align-items:center;
 }
+
+.CalloutMessage .button.Button--Dark{background-color:$secondary-color;border-radius:50px;position:absolute;right:20px;}
+.CalloutMessage .button.Button--Dark span{z-index:9;margin:0;}
+.CalloutMessage .close-button-base{position:absolute;right:0;height:100%;top:0;background-repeat:no-repeat;background-position:center}
+
+
+
 
 .SignupMessage.SignupMessage--sliding{
 	position:fixed;
@@ -811,8 +818,8 @@ transform:translate3d(0, 0, 0)
 }
 
 @media only screen and (max-width: 540px){.SignupMessage.SignupMessage--sliding{display:none}}
-.SignupMessage.SignupMessage--DetailsPage{padding:64px 0 68px;box-sizing:border-box}
-@media only screen and (max-width: 540px){.SignupMessage.SignupMessage--DetailsPage{padding:36px 15px;font-size:18px}}
+.SignupMessage.SignupMessage-ProductPage{padding:64px 0 68px;box-sizing:border-box}
+@media only screen and (max-width: 540px){.SignupMessage.SignupMessage-ProductPage{padding:36px 15px;font-size:18px}}
 .SignupMessage span{margin:0 0 18px 0;}
 .SignupMessage .SignupMessage-Buttons{display:flex;flex-direction:row;}
 .SignupMessage .button.Button--Dark{padding: inherit 60px;background-color:$secondary-color;border-radius:50px;}

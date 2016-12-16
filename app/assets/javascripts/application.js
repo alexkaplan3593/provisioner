@@ -19,6 +19,13 @@
 //= require chosen/chosen.jquery.js
 //= require_tree .
 
+
+function closeCallout(obj){
+	event.preventDefault();
+	$(obj).parent().slideUp();
+
+}
+
 function get_amazon_details() {
 	var url = $("#product_url").val();
 	var split_url;
