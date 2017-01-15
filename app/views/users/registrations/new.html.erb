@@ -47,9 +47,10 @@
     
     <div class="col-sm-6">
       <div class="sign-up-links field-container">
-        <a class="btn btn-block btn-social btn-lg btn-facebook">
-          <span class="fa fa-facebook"></span> Sign up with Facebook
-        </a>
+  <%= link_to user_omniauth_authorize_path(:facebook), :class=> "btn btn-block btn-social btn-lg btn-facebook"  do%>
+
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+      <% end %>
 
         <a class="btn btn-block btn-social btn-lg btn-google">
           <span class="fa fa-google"></span> Sign up with Google

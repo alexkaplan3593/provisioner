@@ -55,7 +55,6 @@ gem 'spring',        group: :development
 
 gem 'httparty'
 
-gem 'omniauth'
 gem 'omniauth-amazon'
 gem 'omniauth-facebook'
 gem 'omniauth-google'

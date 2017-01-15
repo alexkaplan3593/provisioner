@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   end
 
-  devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
+  devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations',omniauth_callbacks: "users/omniauth_callbacks"  }
 
   get 'products/categories'
   get 'products/recent' => 'products#recent'

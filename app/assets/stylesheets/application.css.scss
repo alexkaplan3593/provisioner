@@ -30,13 +30,14 @@ $primary-background-color: #f2f2f2;
 $sign-up-msg-color:#1DC574;/*#3398e1*/
 
 @import "bootstrap-social/bootstrap-social";
-@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:400,300italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-html,body,button,input,select,textarea{color:$primary-foreground-color;font-family: 'Libre Franklin', sans-serif;}
+html,body,button,input,select,textarea{color:$primary-foreground-color;font-family: 'Oswald', sans-serif;}
 
 html{
 	background:$primary-background-color;
@@ -60,7 +61,6 @@ body{
 .wrapper{
 	box-sizing:border-box;
 	margin:0 auto;
-	max-width:1203px;
 	min-width:310px;
 	padding:0 42px;
 	position:relative;
@@ -201,7 +201,7 @@ select{
 	text-decoration: none;
 }
 .top-right{position:absolute;top:0;right:0}
-.ProductCard{display:inline-block;margin:2%;min-width:270px;overflow:hidden;position:relative;text-align:left;vertical-align:top;width:29.333333333%;box-shadow:0px 3px 8px -4px rgba(0,0,0,0.15)}
+.ProductCard{display:inline-block;margin:1%;min-width:270px;overflow:hidden;position:relative;text-align:left;vertical-align:top;width:31.333333333%;box-shadow:0px 3px 8px -4px rgba(0,0,0,0.15)}
 .ProductCard-actionsContainer{display:-ms-flexbox;display:-webkit-box;display:flex;display:-webkit-flex;-ms-flex-direction:row;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}
 
 /* Likes replace CARD with tile */
@@ -281,7 +281,7 @@ select{
 .nav-level{
 	position:relative;
 	min-height:68px;
-	margin:24px 0px 6px 0px;
+	margin:0px 0px 6px 0px;
 	display:flex;
 	flex-direction:row;
 	align-items:center;
@@ -354,7 +354,7 @@ a.button,.button,input[type=submit]{
 	font-size:20px;
 	font-weight:500;
 	margin:0 8px 0 0;
-	padding:13px 20px 15px;
+	padding:13px 15px 15px;
 	position:relative;
 	text-decoration:none;
 	text-align:center;
@@ -789,6 +789,7 @@ transform:translate3d(0, 0, 0)
 .SignupMessage, .CalloutMessage{
 	display:block;
 	width:100%;
+	padding-bottom: 20px;
 	background-color:$sign-up-msg-color;
 	color:white;font-weight:500;
 	font-size:24px;
@@ -800,7 +801,7 @@ transform:translate3d(0, 0, 0)
 }
 
 .CalloutMessage .button.Button--Dark{background-color:$secondary-color;border-radius:50px;position:absolute;right:20px;}
-.CalloutMessage .button.Button--Dark span{z-index:9;margin:0;}
+.CalloutMessage .button.Button--Dark span{z-index:9;margin:0px -8px 0px 0px;}
 .CalloutMessage .close-button-base{position:absolute;right:0;height:100%;top:0;background-repeat:no-repeat;background-position:center}
 
 
