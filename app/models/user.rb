@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-         has_many :products, through: :likes
          has_many :likes
+         has_many :products, through: :likes
 
-         has_many :products, through: :collections
-         has_many :collections
+         #has_many :products, through: :collections
+         #has_many :collections
 
 	def fullname
   	"#{first_name} #{last_name}"
@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_name   # assuming the user model has a first name
       user.last_name = auth.info.last_name   # assuming the user model has a last name
-
       user.image = auth.info.image # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails, 
       # uncomment the line below to skip the confirmation emails.

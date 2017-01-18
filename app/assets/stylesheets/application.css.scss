@@ -860,7 +860,58 @@ a.product-link{text-decoration:none}
 .product-link{width:100%;height:100%;top:0;bottom:0;left:0;right:0;position:absolute;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;text-decoration:none;-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-justify-content:center;-webkit-box-pack:center;justify-content:center}
 .product-link:focus{outline:none}
 
+/*Footer */
+
 @media only screen and (max-width: 540px){footer{padding:50px 0 100px}}
+footer{
+	background-color:white;
+}
+footer div.links a {
+	margin-right: 20px;
+  text-decoration: none;
+  line-height: 1.5;
+  color: #585858;
+}
+
+footer div.links a:hover span{
+color:#141414;
+background-size:2px 2px;
+background-image:-webkit-linear-gradient(top, transparent 50%, #141414 50%);
+background-image:linear-gradient(to bottom, transparent 50%, #141414 50%);
+background-repeat:repeat-x;
+background-position:center bottom;
+text-decoration:none
+}
+
+footer div.links a.active{color:#141414}
+footer div.links a.active span{
+font-weight:500;
+-moz-osx-font-smoothing:grayscale;
+-webkit-font-smoothing:antialiased
+}
+
+footer div.links a.active:hover span{
+color:#141414;
+cursor:default;
+background-image:none
+}
+
+footer .small-text{
+	color: #a6a6a6;
+  font-size: 15px;
+  margin-top: 48px;
+  margin-bottom: 0px;
+  padding-bottom: 96px;
+}
+
+
+
+
+
+
+
+
+
 
 /*sign up screen */
 .sign-up-disambiguation input[disabled]{opacity:0.4}
@@ -945,6 +996,11 @@ form.new_user {padding: 0px 5vw;}
 }
 
 
+/* Profile */
+
+.profile{
+	background-color:white;
+}
 
 
 
