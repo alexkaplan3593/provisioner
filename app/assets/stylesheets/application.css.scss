@@ -209,9 +209,28 @@ select{
 .hover-container:hover .like-action .glyphicon-heart{opacity:0.4;}
 .hover-container .glyphicon{font-size:25px;-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out}
 .hover-container .btn-default {border:none; background-color:transparent;}
-.cardlike{-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out;cursor:pointer;letter-spacing:1px;text-transform:uppercase;font-weight:500;-moz-osx-font-smoothing:initial;-webkit-font-smoothing:subpixel-antialiased;display:block;color:#999999;font-size:0;position:relative;z-index:2;display:-ms-flexbox;display:-webkit-box;display:flex;display:-webkit-flex;-ms-flex-direction:row;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;align-items:center}
-.cardlike .glyph-action{overflow:hidden;position:relative;display:block;-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out}
-.cardlike:hover .like-action .glyphicon-heart{opacity:0.7;}
+.cardlike{
+	-webkit-transition:opacity 0.2s ease-in-out;
+	transition:opacity 0.2s ease-in-out;
+	cursor:pointer;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	font-weight:500;
+	-moz-osx-font-smoothing:initial;-webkit-font-smoothing:subpixel-antialiased;
+	display:block;color:#999999;
+	font-size:0;position:relative;
+	z-index:2;display:-ms-flexbox;
+	display:-webkit-box;display:flex;
+	display:-webkit-flex;-ms-flex-direction:row;-webkit-flex-direction:row;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;flex-direction:row;-ms-flex-align:center;
+	-webkit-align-items:center;
+	-webkit-box-align:center;
+	align-items:center}
+.cardlike .glyph-action{overflow:hidden;position:relative;
+	display:block;-webkit-transition:opacity 0.2s ease-in-out;
+	transition:opacity 0.2s ease-in-out;}
+.cardlike:hover .like-action .glyphicon-heart{color:#999999; opacity:0.7;}
 .cardlike.is-liked .like-action .glyphicon-heart {color:red; opacity:0.4;}
 .cardlike .like-hidden .glyphicon-heart{opacity:0;}
 
@@ -335,7 +354,9 @@ transition:color 0.2s ease-in-out
 .filter-link:first-of-type:not(.active),.filter-link:last-of-type:not(.active){padding:4px 14px}
 .filter-link.is-prime{padding-left:22px !important}
 .filter-link.is-prime.active{padding-left:28px !important}
-.filter-link.is-prime:before{content:"";background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAIFJREFUSA1jYBgFoyEwGgKDMQSYyXSUD1DfDyD%2BSKZ%2BuLZgIOs3EC%2BBi5DJgBl0GKifh1gzPIEKE9EUk2UQyIz1QPwPiJNAHCAg2yCQZnYg3gbEIAOnAjEojEjyGlA9CgAZeByIQQZeBWKiwwioFivgBYoeBWJxrLKjgqMhMNRDAAAmshTrDGStcgAAAABJRU5ErkJggg%3D%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAIFJREFUSA1jYBgFoyEwGgKDMQSYyXSUD1DfDyD%2BSKZ%2BuLZgIOs3EC%2BBi5DJgBl0GKifh1gzPIEKE9EUk2UQyIz1QPwPiJNAHCAg2yCQZnYg3gbEIAOnAjEojEjyGlA9CgAZeByIQQZeBWKiwwioFivgBYoeBWJxrLKjgqMhMNRDAAAmshTrDGStcgAAAABJRU5ErkJggg%3D%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA6CAYAAADcKStOAAAAAXNSR0IArs4c6QAAAOZJREFUaAXtlEEKwjAUBYuewa3gCRRXegBBL%2BCit%2FCGLlx5CMG9CO5UEH0fDZRIJZCQKE7g0aZJX4eBtKoYGMAABjCAAQxgAAMYwAAGMICB3zHQC0Xthm5MsG%2Bojq3SUTYJ%2BpJUjNRyUO6vrJK0RpaYqSbUUfNxZGf060AN5HAW4DGrKYPaK2dl%2FgEuK5RxrBV3qgxuofgjO5QB9JWd0gZXBMrAbLTBFYV6or3DXbRwUpzJov8p39xXQDXN2SFwUDfdT91i6etEAFfFoOrSMP73DW7pP2SOAQxgAAMYwAAGMICB%2FzLwAEjGS8MJoFK1AAAAAElFTkSuQmCC) 2x);background-position:center;background-repeat:no-repeat;background-size:100%;height:29px;width:19px;position:absolute;display:block;opacity:.3;top:-1px;bottom:0;left:2px;-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out}.filter-link.is-prime:hover:before{opacity:.6}.filter-link.is-prime.active:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAH5JREFUSA1jYBgFoyEwGgLDJgT%2B%2F%2F%2FvA8RyFHsIaEgwEP8G4iUUGYZk0GEgm4cow4AKPYE4EVkxWQaBDABqXA%2FE%2F4A4CcqHeY14F8FcAjSEHYi3QQ2cCqRBYUS6QWgGHocaeBVIExdGMAPQaaABvEB8FIjF0eVG%2BaMhMCxCAADumoGu%2F8lPdwAAAABJRU5ErkJggg%3D%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAH5JREFUSA1jYBgFoyEwGgLDJgT%2B%2F%2F%2FvA8RyFHsIaEgwEP8G4iUUGYZk0GEgm4cow4AKPYE4EVkxWQaBDABqXA%2FE%2F4A4CcqHeY14F8FcAjSEHYi3QQ2cCqRBYUS6QWgGHocaeBVIExdGMAPQaaABvEB8FIjF0eVG%2BaMhMCxCAADumoGu%2F8lPdwAAAABJRU5ErkJggg%3D%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA6CAYAAADcKStOAAAAAXNSR0IArs4c6QAAAN9JREFUaAXtlD0KwkAQRnMJW8ETKFbmAIJewMJb2Hk8TyKkF8FOBVnfyk7h4E%2B3E%2FEb%2BJjNpJjHy5KmUcmADMiADMiADMiADMiADMiADMjAjxhIKQ16hwrUmBzItjdwwEwKFO1Rm3A4MMxUYUpHDtNQMEFhYETm3z5DVVMFqqOfyeIdXFWoDMHCHbHKcEsPx6z%2BRWfpkOyJ1RMcw%2FpQZoblL%2BFCoT7AXQA7Eau4%2FxQE3lw8lDOX75nVjUNr70M7IDNyJRlqHQrjlxe4lZ%2FrWQZkQAZkQAZkQAZkQAb%2By8AdzROUWYaXqP4AAAAASUVORK5CYII%3D) 2x);background-position:center;background-repeat:no-repeat;background-size:100%;height:29px;width:19px;opacity:1;left:6px}
+.filter-link.is-prime:before{content:"";background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAIFJREFUSA1jYBgFoyEwGgKDMQSYyXSUD1DfDyD%2BSKZ%2BuLZgIOs3EC%2BBi5DJgBl0GKifh1gzPIEKE9EUk2UQyIz1QPwPiJNAHCAg2yCQZnYg3gbEIAOnAjEojEjyGlA9CgAZeByIQQZeBWKiwwioFivgBYoeBWJxrLKjgqMhMNRDAAAmshTrDGStcgAAAABJRU5ErkJggg%3D%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAIFJREFUSA1jYBgFoyEwGgKDMQSYyXSUD1DfDyD%2BSKZ%2BuLZgIOs3EC%2BBi5DJgBl0GKifh1gzPIEKE9EUk2UQyIz1QPwPiJNAHCAg2yCQZnYg3gbEIAOnAjEojEjyGlA9CgAZeByIQQZeBWKiwwioFivgBYoeBWJxrLKjgqMhMNRDAAAmshTrDGStcgAAAABJRU5ErkJggg%3D%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA6CAYAAADcKStOAAAAAXNSR0IArs4c6QAAAOZJREFUaAXtlEEKwjAUBYuewa3gCRRXegBBL%2BCit%2FCGLlx5CMG9CO5UEH0fDZRIJZCQKE7g0aZJX4eBtKoYGMAABjCAAQxgAAMYwAAGMICB3zHQC0Xthm5MsG%2Bojq3SUTYJ%2BpJUjNRyUO6vrJK0RpaYqSbUUfNxZGf060AN5HAW4DGrKYPaK2dl%2FgEuK5RxrBV3qgxuofgjO5QB9JWd0gZXBMrAbLTBFYV6or3DXbRwUpzJov8p39xXQDXN2SFwUDfdT91i6etEAFfFoOrSMP73DW7pP2SOAQxgAAMYwAAGMICB%2FzLwAEjGS8MJoFK1AAAAAElFTkSuQmCC) 2x);background-position:center;background-repeat:no-repeat;background-size:100%;height:29px;width:19px;position:absolute;display:block;opacity:.3;top:-1px;bottom:0;left:2px;-webkit-transition:opacity 0.2s ease-in-out;transition:opacity 0.2s ease-in-out}
+
+.filter-link.is-prime:hover:before{opacity:.6}.filter-link.is-prime.active:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAH5JREFUSA1jYBgFoyEwGgLDJgT%2B%2F%2F%2FvA8RyFHsIaEgwEP8G4iUUGYZk0GEgm4cow4AKPYE4EVkxWQaBDABqXA%2FE%2F4A4CcqHeY14F8FcAjSEHYi3QQ2cCqRBYUS6QWgGHocaeBVIExdGMAPQaaABvEB8FIjF0eVG%2BaMhMCxCAADumoGu%2F8lPdwAAAABJRU5ErkJggg%3D%3D);background-image:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAYAAABIWle8AAAAAXNSR0IArs4c6QAAAH5JREFUSA1jYBgFoyEwGgLDJgT%2B%2F%2F%2FvA8RyFHsIaEgwEP8G4iUUGYZk0GEgm4cow4AKPYE4EVkxWQaBDABqXA%2FE%2F4A4CcqHeY14F8FcAjSEHYi3QQ2cCqRBYUS6QWgGHocaeBVIExdGMAPQaaABvEB8FIjF0eVG%2BaMhMCxCAADumoGu%2F8lPdwAAAABJRU5ErkJggg%3D%3D) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA6CAYAAADcKStOAAAAAXNSR0IArs4c6QAAAN9JREFUaAXtlD0KwkAQRnMJW8ETKFbmAIJewMJb2Hk8TyKkF8FOBVnfyk7h4E%2B3E%2FEb%2BJjNpJjHy5KmUcmADMiADMiADMiADMiADMiADMjAjxhIKQ16hwrUmBzItjdwwEwKFO1Rm3A4MMxUYUpHDtNQMEFhYETm3z5DVVMFqqOfyeIdXFWoDMHCHbHKcEsPx6z%2BRWfpkOyJ1RMcw%2FpQZoblL%2BFCoT7AXQA7Eau4%2FxQE3lw8lDOX75nVjUNr70M7IDNyJRlqHQrjlxe4lZ%2FrWQZkQAZkQAZkQAZkQAb%2By8AdzROUWYaXqP4AAAAASUVORK5CYII%3D) 2x);background-position:center;background-repeat:no-repeat;background-size:100%;height:29px;width:19px;opacity:1;left:6px}
 
 .filter-link.is-prime.active:hover:before{opacity:1}
 .filter-group+.filter-group:before{background-color:#cccccc;content:"";display:block;height:30px;margin-left:-25px;position:absolute;width:1px}
@@ -999,6 +1020,7 @@ form.new_user {padding: 0px 5vw;}
 /* Profile */
 
 .profile{
+	padding-top:48px;
 	background-color:white;
 }
 

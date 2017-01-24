@@ -37,14 +37,19 @@
 </div>
 
 <script>
-//enable
 $(".chosen-select").chosen({disable_search_threshold: 10});
 
 $("#select-person .chosen-select").on('change', function(evt, params) {
-    $('#placeholder-person').html(params.selected);
+    $('#placeholder-person').html('<span class="placeholder-text">'+params.selected + '</span>');
     $('#tagline').append(", who is <span id='placeholder-interest'>...</span>");
     $('#select-person').css('display', 'none');
     $('#select-interest').css('display', 'inline-block');
+    console.log("move");
+});
+
+$('#placeholder-person').on('click', function(evt, params) {
+  $('#placeholder-person .placeholder-text').empty();
+  $('#select-person').appendTo('#placeholder-person').css('display', 'inline-block');
 });
 
 $("#select-interest .chosen-select").on('change', function(evt, params) {
