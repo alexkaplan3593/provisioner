@@ -2,13 +2,13 @@
 		<div class="nav-level-layout wrapper">
 			<div class="page-filters">
 				<div class="filter-group">
-				<%	if controller_name == "tags" 
+				<%	
+					if controller_name == "tags" 
 						base_url = "/tags/" + @tag.id.to_s + "/"
 
 					else
 						base_url = "/products/"
 					end
-
 					%>
 
 					<a class="filter-link <%= 'active' if current_page?(action: 'recent', controller: 'products') %>" href="<%=base_url%>recent">New</a>

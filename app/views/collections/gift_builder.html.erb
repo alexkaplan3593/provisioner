@@ -3,7 +3,7 @@
     <div class="col-sm-8 col-sm-offset-2">
         <%= form_for Collection.new do |f| %>
 
-      <h2 id="tagline"> A Gift For My <span id="placeholder-person">...</span></h2>
+      <h2 id="tagline"> A Gift For My <span id="placeholder-person"><span class="placeholder-dots">...</span></span></h2>
       
       <span id="select-person" class="select-mod">
         <span class="select-hold"> <i class="icon-chevron-down"></i></span>
@@ -39,35 +39,72 @@
 <script>
 $(".chosen-select").chosen({disable_search_threshold: 10});
 
+// Generate Person item
 $("#select-person .chosen-select").on('change', function(evt, params) {
-    $('#placeholder-person').html('<span class="placeholder-text">'+params.selected + '</span>');
-    $('#tagline').append(", who is <span id='placeholder-interest'>...</span>");
-    $('#select-person').css('display', 'none');
-    $('#select-interest').css('display', 'inline-block');
-    console.log("move");
+  //remove the first placeholder
+  $('#placeholder-person .placeholder-dots').css('display', 'none');
+  //append selected info
+  $('#placeholder-person').append('<span class="placeholder-text">'+params.selected + '</span>');
+
+  //append the next placeholder
+  $('#tagline').append("<span class='next-interest'>, who is <span id='placeholder-interest'><span class='placeholder-dots'>...</span></span></span>");
+  $('#select-person').css('display', 'none');
+  $('#select-interest').css('display', 'inline-block');
 });
 
+// Change person on click
 $('#placeholder-person').on('click', function(evt, params) {
-  $('#placeholder-person .placeholder-text').empty();
-  $('#select-person').appendTo('#placeholder-person').css('display', 'inline-block');
+  //remove the second placeholder
+  $('.next-interest').remove();
+  //remove the selected item
+  $('#placeholder-person .placeholder-text').remove();
+  //append the select box
+  $('#select-person').appendTo('#tagline').css('display', 'inline-block');
 });
 
+// Generate Interest item
 $("#select-interest .chosen-select").on('change', function(evt, params) {
-    $('#placeholder-interest').html(params.selected);
-    $('#tagline').append(", and enjoys <span id='placeholder-activity'>...</span>");
+    $('#placeholder-interest .placeholder-dots').css('display', 'none');
+    $('#placeholder-interest').append('<span class="placeholder-text">'+params.selected + '</span>');
+
+    //append the next placeholder
+    $('#tagline').append("<span class='next-activity'>, and enjoys <span id='placeholder-activity'><span class='placeholder-dots'>...</span></span></span>");
     $('#select-interest').css('display', 'none');
     $('#select-activity').css('display', 'inline-block');
-
 });
 
+// Change interest on click using event delegation
+$(document).on('click','#placeholder-interest',function(evt, params) {
+  console.log("run");
+  //remove the second placeholder
+  $('.next-activity').remove();
+  //remove the selected item
+  $('#placeholder-interest .placeholder-text').remove();
+  //append the select box
+  $('#select-interest').appendTo('#tagline').css('display', 'inline-block');
+});
+
+// Generate activity item
 $("#select-activity .chosen-select").on('change', function(evt, params) {
-    $('#placeholder-activity').html(params.selected);
-    $('#tagline').append(".");
+    $('#placeholder-activity .placeholder-dots').css('display', 'none');
+    $('#placeholder-activity').append('<span class="placeholder-text">'+params.selected + '</span>');
+    
+    $('#tagline').append("<span class='placeholder-period'>.</span");
     $('#select-activity').css('display', 'none');
-
     $('#rdy-btn').css('display', 'inline');
-
 });
+
+
+// Change activity on click using event delegation
+$(document).on('click','#placeholder-activity',function(evt, params) {
+  //remove the selected item
+  $('#placeholder-activity .placeholder-text').remove();
+  $('.placeholder-period').remove();
+  //append the select box
+  $('#select-activity').appendTo('#tagline').css('display', 'inline-block');
+});
+
+
 
 $('#rdy-btn').on('click', function(){
   get_collections();
