@@ -32,9 +32,10 @@
     <span class="fa fa-facebook"></span> Sign in with Facebook
       <% end %>
 
-  <!--<a class="btn btn-block btn-social btn-lg btn-google">
-    <span class="fa fa-google"></span> Sign in with google
-  </a>-->
+    <%= link_to user_omniauth_authorize_path(:amazon), :class=> "btn btn-block btn-social btn-lg btn-amazon"  do%>
+          <span class="fa fa-amazon"></span> Sign in with Amazon
+    <% end %>
+
   </div>
 </div>
 <hr>

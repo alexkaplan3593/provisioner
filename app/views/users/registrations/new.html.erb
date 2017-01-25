@@ -47,14 +47,13 @@
     
     <div class="col-sm-6">
       <div class="sign-up-links field-container">
-  <%= link_to user_omniauth_authorize_path(:facebook), :class=> "btn btn-block btn-social btn-lg btn-facebook"  do%>
+        <%= link_to user_omniauth_authorize_path(:facebook), :class=> "btn btn-block btn-social btn-lg btn-facebook"  do%>
+          <span class="fa fa-facebook"></span> Sign in with Facebook
+        <% end %>
 
-    <span class="fa fa-facebook"></span> Sign in with Facebook
-      <% end %>
-
-        <a class="btn btn-block btn-social btn-lg btn-google">
-          <span class="fa fa-google"></span> Sign up with Google
-        </a>
+        <%= link_to user_omniauth_authorize_path(:amazon), :class=> "btn btn-block btn-social btn-lg btn-amazon"  do%>
+          <span class="fa fa-amazon"></span> Sign in with Amazon
+        <% end %>
 
        <!-- <a class="btn btn-block btn-social btn-lg btn-instagram">
           <span class="fa fa-email"></span> Sign up with email

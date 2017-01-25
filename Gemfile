@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -31,9 +29,7 @@ gem 'ahoy_matey'
 gem 'activeuuid', '>= 0.5.0'
 
 gem 'friendly_id', '~> 5.1.0'
-
 gem 'figaro'
-
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -54,7 +50,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'httparty'
-
+gem 'omniauth-oauth2', '1.3.1'
 gem 'omniauth-amazon'
 gem 'omniauth-facebook'
 gem 'omniauth-google'

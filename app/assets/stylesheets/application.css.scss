@@ -19,7 +19,7 @@
 $border-radius-base:0;
 $border-radius-small:0;
 $border-radius-large:0;
-$primary-color: rgba(38,119,187,1); /*#2fdab8*/
+$primary-color: rgba(28,178,159,1); /*#2fdab8*/
 $primary-hover-color: #0C487A;
 $button-hover:#0C487A;
 $accent-color: #3398e1;
@@ -1023,6 +1023,14 @@ form.new_user {padding: 0px 5vw;}
 	background-color:white;
 }
 
+
+.btn-amazon{color:#fff;background-color:rgba(249,202,79,1);border-color:rgba(0,0,0,0.2)}.btn-amazon:focus,.btn-amazon.focus{color:#fff;background-color:rgba(218,178,69,1);border-color:rgba(0,0,0,0.2)}
+.btn-amazon:hover{color:#fff;background-color:rgba(218,178,69,1);border-color:rgba(0,0,0,0.2)}
+.btn-amazon:active,.btn-amazon.active,.open>.dropdown-toggle.btn-amazon{color:#fff;background-color:rgba(218,178,69,1);border-color:rgba(0,0,0,0.2)}
+.btn-amazon:active:hover,.btn-amazon.active:hover,.open>.dropdown-toggle.btn-amazon:hover,.btn-amazon:active:focus,.btn-amazon.active:focus,.open>.dropdown-toggle.btn-amazon:focus,.btn-amazon:active.focus,.btn-amazon.active.focus,.open>.dropdown-toggle.btn-amazon.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+.btn-amazon:active,.btn-amazon.active,.open>.dropdown-toggle.btn-amazon{background-image:none}
+.btn-amazon.disabled:hover,.btn-amazon[disabled]:hover,fieldset[disabled] .btn-amazon:hover,.btn-amazon.disabled:focus,.btn-amazon[disabled]:focus,fieldset[disabled] .btn-amazon:focus,.btn-amazon.disabled.focus,.btn-amazon[disabled].focus,fieldset[disabled] .btn-amazon.focus{background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-amazon .badge{color:#3b5998;background-color:#fff}
 
 
 

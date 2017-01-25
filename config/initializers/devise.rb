@@ -18,6 +18,8 @@ config.secret_key = ENV['DEVISE_SECRET_KEY']
   # config.mailer = 'Devise::Mailer'
 
   config.omniauth :facebook, "1667072860232019", "229deb138c7d53f4341001f19656f20f", info_fields: 'email, first_name, last_name, picture', :image_size => 'large'
+  config.omniauth :amazon, "amzn1.application-oa2-client.4afa9d677d5a4324aa03eee677df61d0", "0e0b07aa0965f4a02541b7389f0eb7812213a5c4d2704e07ee9d3da6c569eeb6"
+
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be

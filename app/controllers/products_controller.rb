@@ -6,6 +6,8 @@ class ProductsController < GridController
   respond_to :html, :js, :json
   # GET /products
   # GET /products.json
+
+  ## Infinite Scroll is based on : https://www.sitepoint.com/infinite-scrolling-rails-basics/
   def index
     @products = Product.paginate(page: params[:page], per_page: 12).order('created_at DESC')
     respond_to do |format|
@@ -30,28 +32,28 @@ class ProductsController < GridController
   end
 
   def recent
-    @products = Product.paginate(page: params[:page], per_page: 4).order('created_at ASC')
-    render :viewlist
+    @products = Product.paginate(page: params[:page], per_page: 12).order('created_at ASC')
+    render :index
   end
 
   def hot
-    @products = Product.paginate(page: params[:page], per_page: 4).order('created_at DESC')
-    render :viewlist
+    @products = Product.paginate(page: params[:page], per_page: 12).order('created_at DESC')
+    render :index
   end
 
   def most_to_least
-    @products = Product.paginate(page: params[:page], per_page: 4).order('price DESC')
-    render :viewlist
+    @products = Product.paginate(page: params[:page], per_page: 12).order('price DESC')
+    render :index
   end
 
   def least_to_most
-    @products = Product.paginate(page: params[:page], per_page: 4).order('price ASC')
-    render :viewlist
+    @products = Product.paginate(page: params[:page], per_page: 12).order('price ASC')
+    render :index
   end
 
   def prime
-    @products = Product.paginate(page: params[:page], per_page: 4).where(:prime => true)
-    render :viewlist
+    @products = Product.paginate(page: params[:page], per_page: 12).where(:prime => true)
+    render :index
   end
 
   # GET /products/new
