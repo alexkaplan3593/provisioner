@@ -1,13 +1,18 @@
 class RegistrationsController < Devise::RegistrationsController
-	layout "simple"
+	layout :resolve_layout
 
   def new
   	super
   end
 
-  # def create
-  #   super
-  # end
+  def resolve_layout
+    case action_name
+    when "new", "create","index"
+      "simple"
+    else
+      "application"
+    end
+  end
 
   def sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)

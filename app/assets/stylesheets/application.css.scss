@@ -20,14 +20,14 @@ $border-radius-base:0;
 $border-radius-small:0;
 $border-radius-large:0;
 $primary-color: rgba(28,178,159,1); /*#2fdab8*/
-$primary-hover-color: #0C487A;
-$button-hover:#0C487A;
+$primary-hover-color: #127163/* #0C487A*/;
+$button-hover:#127163;
 $accent-color: #3398e1;
-$secondary-color: #00B65F;
+$secondary-color: #132d34;
 $secondary-hover-color: #008947;
 $primary-foreground-color: #212121;
 $primary-background-color: #f2f2f2;
-$sign-up-msg-color:#1DC574;/*#3398e1*/
+$sign-up-msg-color:rgba(33,76,88,1);/*#1DC574;#3398e1*/
 
 @import "bootstrap-social/bootstrap-social";
 @import url(https://fonts.googleapis.com/css?family=Oswald);

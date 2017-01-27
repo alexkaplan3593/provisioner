@@ -2,7 +2,7 @@ class ProductsController < GridController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :get_tags, only: [:new, :show, :edit, :update, :destroy]
-
+  before_action :check_retailer
   respond_to :html, :js, :json
   # GET /products
   # GET /products.json
@@ -114,6 +114,12 @@ class ProductsController < GridController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.friendly.find(params[:id])
+    end
+
+    def check_retailer
+      if params[:rtlr].present?
+        puts 'present'
+      end
     end
 
     def get_tags
