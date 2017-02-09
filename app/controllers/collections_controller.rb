@@ -51,7 +51,7 @@ class CollectionsController < ApplicationController
     if params[:collection][:image].present?
       preloaded = Cloudinary::PreloadedFile.new(params[:collection][:image])         
       raise "Invalid upload signature" if !preloaded.valid?
-      puts preloaded
+      puts preloaded.identifier
       @collection.image = preloaded.identifier
     end
 
@@ -62,6 +62,13 @@ class CollectionsController < ApplicationController
 
   def update
     @collection.update(collection_params)
+
+    if params[:collection][:image].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:collection][:image])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      puts preloaded.identifier
+      @collection.image = preloaded.identifier
+    end
     respond_with(@collection)
   end
 
