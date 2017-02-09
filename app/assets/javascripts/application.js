@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require fancybox
 //= require ahoy
+//= require cloudinary
 //= require chosen/chosen.jquery.js
 //= require_tree .
 

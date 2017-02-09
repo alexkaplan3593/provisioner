@@ -23,8 +23,9 @@
 
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.cl_image_upload :image %>
   </div>
+  <div class="preview"></div>
 
   <div class="field">
     <%= f.label :user_id %><br>
@@ -37,6 +38,24 @@
 <% end %>
 
 <script type="text/javascript">
+$(function() {
+  if($.fn.cloudinary_fileupload !== undefined) {
+    $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+  }
+});
+
+$('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {  
+  $('.preview').html(
+    $.cloudinary.image(data.result.public_id, 
+      { format: data.result.format, version: data.result.version, 
+        crop: 'fill', width: 150, height: 100 })
+  );    
+  $('.image_public_id').val(data.result.public_id);    
+  return true;
+});
+
+
+
  $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
     //$('#product_url').change(get_amazon_details);
 </script>

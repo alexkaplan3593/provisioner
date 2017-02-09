@@ -17,6 +17,8 @@ gem 'autoprefixer-rails'
 # Pagination for infinite scrolls
 gem 'will_paginate'
 
+gem 'cloudinary'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -27,6 +29,10 @@ gem 'therubyracer',  platforms: :ruby
 gem 'ahoy_matey'
 ## For Ahoy when using SQLite, not required when using PostgreSQL
 gem 'activeuuid', '>= 0.5.0'
+
+## Scheduling to sync DB
+gem 'crono'
+
 
 gem 'friendly_id', '~> 5.1.0'
 gem 'figaro'

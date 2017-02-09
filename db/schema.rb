@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107180155) do
+ActiveRecord::Schema.define(version: 20170204000855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 20170107180155) do
 
   add_index "collections_tags", ["collection_id"], name: "index_collections_tags_on_collection_id", using: :btree
   add_index "collections_tags", ["tag_id"], name: "index_collections_tags_on_tag_id", using: :btree
+
+  create_table "crono_jobs", force: true do |t|
+    t.string   "job_id",            null: false
+    t.text     "log"
+    t.datetime "last_performed_at"
+    t.boolean  "healthy"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "crono_jobs", ["job_id"], name: "index_crono_jobs_on_job_id", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

@@ -21,8 +21,16 @@
 
 			<div class="page-filters">
 
+
 				<div class="filter-group">
-									<a class="filter-link  <%= 'active' if current_page?(action: 'prime', controller: 'products') %>  is-prime" href="<%=request.original_url%>?rtlr=prime">Prime</a>
+				<% if params[:rtlr] == 'prime'%>
+				<%= link_to request.query_parameters.merge({:rtlr => nil}), :class =>"active filter-link is-prime" do %>Prime<% end %>
+
+				<% else %>
+				<%= link_to request.query_parameters.merge({:rtlr => "prime"}), :class =>"filter-link is-prime" do %>Prime<% end %>
+				<%  end %>
+
+
 				</div>
 				</div>
 

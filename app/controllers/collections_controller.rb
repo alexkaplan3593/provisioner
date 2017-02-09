@@ -45,7 +45,16 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
+
+    if params[:collection][:image].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:collection][:image])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      puts preloaded
+      @collection.image = preloaded.identifier
+    end
+
     @collection.save
+
     respond_with(@collection)
   end
 
@@ -60,6 +69,7 @@ class CollectionsController < ApplicationController
   end
 
   private
+
     def set_collection
       @collection = Collection.friendly.find(params[:id])
     end

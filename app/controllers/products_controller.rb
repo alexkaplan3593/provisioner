@@ -9,7 +9,7 @@ class ProductsController < GridController
 
   ## Infinite Scroll is based on : https://www.sitepoint.com/infinite-scrolling-rails-basics/
   def index
-    @products = Product.paginate(page: params[:page], per_page: 12).order('created_at DESC')
+    @products = @products.paginate(page: params[:page], per_page: 12).order('created_at DESC')
     respond_to do |format|
       format.html
       format.js
@@ -17,7 +17,7 @@ class ProductsController < GridController
   end
 
   def viewlist
-    @products = Product.all
+    @products = @products
   end
 
   # GET /products/1
@@ -32,27 +32,27 @@ class ProductsController < GridController
   end
 
   def recent
-    @products = Product.paginate(page: params[:page], per_page: 12).order('created_at ASC')
+    @products = @products.paginate(page: params[:page], per_page: 12).order('created_at ASC')
     render :index
   end
 
   def hot
-    @products = Product.paginate(page: params[:page], per_page: 12).order('created_at DESC')
+    @products = @products.paginate(page: params[:page], per_page: 12).order('created_at DESC')
     render :index
   end
 
   def most_to_least
-    @products = Product.paginate(page: params[:page], per_page: 12).order('price DESC')
+    @products = @products.paginate(page: params[:page], per_page: 12).order('price DESC')
     render :index
   end
 
   def least_to_most
-    @products = Product.paginate(page: params[:page], per_page: 12).order('price ASC')
+    @products = @products.paginate(page: params[:page], per_page: 12).order('price ASC')
     render :index
   end
 
   def prime
-    @products = Product.paginate(page: params[:page], per_page: 12).where(:prime => true)
+    @products = @products.paginate(page: params[:page], per_page: 12).where(:prime => true)
     render :index
   end
 
@@ -118,7 +118,11 @@ class ProductsController < GridController
 
     def check_retailer
       if params[:rtlr].present?
-        puts 'present'
+        if params[:rtlr] == "prime"
+          @products = Product.where(:prime =>true)
+        end
+      else
+        @products = Product.all
       end
     end
 
