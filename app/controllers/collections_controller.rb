@@ -69,6 +69,9 @@ class CollectionsController < ApplicationController
       puts preloaded.identifier
       @collection.image = preloaded.identifier
     end
+
+    @collection.save
+
     respond_with(@collection)
   end
 
