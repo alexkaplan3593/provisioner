@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @collections = Collection.where(:display => true)
+    @collections = Collection.where(:display => true).order('collection_name DESC')
 
     if params[:tags]
       tags = params[:tags]
