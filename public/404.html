@@ -6,7 +6,9 @@
   <style>
   .vertical-center-outer{display:table;height:100%;width:100%}
 	.vertical-center-inner{display:table-cell;vertical-align:middle}
-
+	body{
+		font-family: Helvetica, Arial, sans-serif;
+	}
 	/* Button Styling */
 a.button,.button,input[type=submit]{
 	appearance:none;
@@ -39,13 +41,13 @@ a.button,.button,input[type=submit]{
 	transition-timing-function:ease-in-out}
 
 .button.goto:focus,a.button.goto:focus{outline:none}
-.button.goto:hover,a.button.goto:hover{background-color:#008947;
+.button.goto:hover,a.button.goto:hover{background-color:#127163;
 	box-shadow:rgba(0,0,0,0.2) 0px 4px 16px}
 .button.goto:active,a.button.goto:active{background-color:#39ac95}
 @media only screen and (max-width: 540px){.button.goto:after,a.button.goto:after{margin:3px 17px 10px 13px}}
 a.button.button-full-width,.button.button-full-width,input[type=submit].button-full-width{width:100%}
 a.button span,.button span,input[type=submit] span{display:block}
-a.button:hover,.button:hover,input[type=submit]:hover{background-color:#008947;}
+a.button:hover,.button:hover,input[type=submit]:hover{background-color:#127163;}
 a.button:focus,.button:focus,input[type=submit]:focus{outline:none}
 a.button:active,.button:active,input[type=submit]:active{background-color:#427067;outline:none}
 @media only screen and (max-width: 540px){a.button,.button,textarea,input[type=submit],input[type=email],input[type=text],input[type=password],input,select{font-size:16px}}
@@ -65,13 +67,17 @@ a.button.deactivated:focus,.button.deactivated:focus,input[type=submit].deactiva
   </style>
 </head>
 
-<body>
-  <div class="vertical-center-outer">
-    <div class="vertical-center-inner">
-      <div class="logo"><a href="/" id=""><img width="100" src="/logo.png" /></a></div>
-            <h1>We couldn't find the page you're looking for!</h1>
-            <a class="button goto" target="_blank" rel="nofollow" href="">Return to Home!</a>
+	<body>
+		<div style="height:100%;box-sizing: border-box; margin: 0 auto;padding: 0 45px;position: relative;width: 100%;">
+  		<div class="vertical-center-outer">
+    		<div class="vertical-center-inner">
+      		<div class="logo"><a href="/" id=""><img width="100" src="/logo.png" /></a></div>
+          
+          <h1>We couldn't find the page you're looking for!</h1>
+          
+          <a class="button goto" target="_blank" rel="nofollow" href="">Return to Home!</a>
         </div>
       </div>
-</body>
+    </div>
+	</body>
 </html>
