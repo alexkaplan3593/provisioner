@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uh Oh! That Page Doesn't Exist</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  .vertical-center-outer{display:table;height:100%;width:100%}
+	.vertical-center-inner{display:table-cell;vertical-align:middle}
+
+	/* Button Styling */
+a.button,.button,input[type=submit]{
+	appearance:none;
+	background-color:rgba(28,178,159,1);
+	border:none;border-radius:0;
+	box-sizing:border-box;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	font-size:20px;
+	font-weight:500;
+	margin:0 8px 0 0;
+	padding:13px 15px 15px;
+	position:relative;
+	text-decoration:none;
+	text-align:center;
+	transition-property:background-color, padding, font-size;
+	transition-duration:0.2s;
+	transition-timing-function:ease-in-out;
+	user-select:none
+}
+
+.button.goto,a.button.goto{
+	font-size:24px;
+	font-weight:500;
+	padding:15px 35px 18px;
+	white-space:nowrap;
+	transition-property:background-color, padding, font-size, box-shadow;
+	transition-duration:0.2s;
+	transition-timing-function:ease-in-out}
+
+.button.goto:focus,a.button.goto:focus{outline:none}
+.button.goto:hover,a.button.goto:hover{background-color:#008947;
+	box-shadow:rgba(0,0,0,0.2) 0px 4px 16px}
+.button.goto:active,a.button.goto:active{background-color:#39ac95}
+@media only screen and (max-width: 540px){.button.goto:after,a.button.goto:after{margin:3px 17px 10px 13px}}
+a.button.button-full-width,.button.button-full-width,input[type=submit].button-full-width{width:100%}
+a.button span,.button span,input[type=submit] span{display:block}
+a.button:hover,.button:hover,input[type=submit]:hover{background-color:#008947;}
+a.button:focus,.button:focus,input[type=submit]:focus{outline:none}
+a.button:active,.button:active,input[type=submit]:active{background-color:#427067;outline:none}
+@media only screen and (max-width: 540px){a.button,.button,textarea,input[type=submit],input[type=email],input[type=text],input[type=password],input,select{font-size:16px}}
+a.button.gray,.button.gray,input[type=submit].gray{background-color:#878787}
+a.button.gray:hover,.button.gray:hover,input[type=submit].gray:hover{background-color:#595959}
+a.button.gray:active,.button.gray:active,input[type=submit].gray:active{background-color:#333333}
+a.button.red,.button.red,input[type=submit].red{background-color:#ff5e4d}
+a.button.red:hover,.button.red:hover,input[type=submit].red:hover{background-color:#ff301a}
+a.button.red:active,.button.red:active,input[type=submit].red:active{background-color:#990f00}
+a.button.upload-button,.button.upload-button,input[type=submit].upload-button{background-color:#ff5283;width:96px;font-size:16px;margin:0}
+a.button.deactivated,.button.deactivated,input[type=submit].deactivated{background-color:#ebebeb;cursor:default}
+a.button.deactivated:hover,.button.deactivated:hover,input[type=submit].deactivated:hover{background-color:#ebebeb;cursor:default}
+a.button.deactivated:active,.button.deactivated:active,input[type=submit].deactivated:active{background-color:#ebebeb}
+a.button.deactivated:focus,.button.deactivated:focus,input[type=submit].deactivated:focus{outline:none;box-shadow:none}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="vertical-center-outer">
+    <div class="vertical-center-inner">
+      <div class="logo"><a href="/" id=""><img width="100" src="/logo.png" /></a></div>
+            <h1>We couldn't find the page you're looking for!</h1>
+            <a class="button goto" target="_blank" rel="nofollow" href="">Return to Home!</a>
+        </div>
+      </div>
+</body>
+</html>
