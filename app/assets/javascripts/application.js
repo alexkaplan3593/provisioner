@@ -88,7 +88,7 @@ function get_amazon_details() {
 	 	if (offers >= 1){
 	 	var first_offer = response.getElementsByTagName("OfferListing")[0];
 	 	var prime = first_offer.getElementsByTagName("IsEligibleForPrime")[0].childNodes[0].nodeValue;
-	 	item_price = first_offer.getElementsByTagName("Price")[0].getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
+	 	item_price = first_offer.getElementsByTagName("ListPrice")[0].getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
 	 	console.log(item_price);
 	 	console.log(prime);
 	 	}

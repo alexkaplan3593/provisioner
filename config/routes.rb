@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+
   resources :tags
   post 'collections/show' => 'collections#build'
   get 'collections/giftbuilder' => 'collections#gift_builder'

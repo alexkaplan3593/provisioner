@@ -17,6 +17,7 @@ gem 'autoprefixer-rails'
 # Pagination for infinite scrolls
 gem 'will_paginate'
 
+# Images/CDN
 gem 'cloudinary'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -32,7 +33,7 @@ gem 'activeuuid', '>= 0.5.0'
 
 ## Scheduling to sync DB
 gem 'crono'
-
+gem 'activejob'
 
 gem 'friendly_id', '~> 5.1.0'
 gem 'figaro'
