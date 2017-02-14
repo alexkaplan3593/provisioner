@@ -33,7 +33,11 @@
 						</li>
 
 						<li class="<%= 'active' if current_page?('/tags') %>">
-							<%= link_to collections_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span><% end %>
+							<%= link_to collections_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Collections</span><% end %>
+						</li>
+
+						<li class="<%= 'active' if current_page?('/tags') %>">
+							<%= link_to categories_path do %><i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span><% end %>
 						</li>
 
 						<li class="<%= 'active' if current_page?('/collections') %>">
@@ -78,7 +82,7 @@
 <%= render 'layouts/footer' %>
 
 <script type="text/javascript">
-	//ahoy.trackAll();
+	ahoy.trackAll();
 	scout();
 $(document).ready(function () {
 	jQuery(function() {

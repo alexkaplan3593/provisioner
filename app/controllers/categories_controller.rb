@@ -1,15 +1,16 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :js
 
   def index
-    @categories = Category.all
-    respond_with(@categories)
+    @categories = Category.order('category_name ASC')
+
   end
 
   def show
-    respond_with(@category)
+    @products = Product.where(:category_id => params[:id])
+
   end
 
   def new
@@ -38,7 +39,7 @@ class CategoriesController < ApplicationController
 
   private
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     end
 
     def category_params
