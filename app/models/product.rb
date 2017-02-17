@@ -43,7 +43,7 @@ class Product < ActiveRecord::Base
 
 		puts "Signed URL: \"#{request_url}\""
 
-		#response = HTTParty.get(request_url)
+		response = HTTParty.get(request_url)
 		return response
 	end
 

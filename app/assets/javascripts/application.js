@@ -39,14 +39,20 @@ function get_amazon_details() {
   		product_id = split_url[1];
 		}
 
-		else if (url.indexOf("dp") > -1){
+		else if (url.indexOf("dp/") > -1){
 			split_url = url.split("dp/");
+			product_id = split_url[1];
+		}
+
+		else if (url.indexOf("gp/") > -1){
+			split_url = url.split("gp/");
 			product_id = split_url[1];
 		}
 
 		else {
 			console.log("URL is invalid");
 		}
+
 
 	$.ajax({
 		url: "/products/populate",
@@ -78,7 +84,11 @@ function get_amazon_details() {
 
 	function put_amazon_details(response){
 		console.log(response);
+
 		var item_price;
+
+		var ASIN = response.getElementsByTagName("ASIN")[0].childNodes[0].nodeValue;
+		console.log(ASIN);
 	 	var vendor =  response.getElementsByTagName("Brand")[0].childNodes[0].nodeValue;
 	 	var name =  response.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
 	 	var imgGallery = response.getElementsByTagName("ImageSets")[0].childNodes;
@@ -88,7 +98,7 @@ function get_amazon_details() {
 	 	if (offers >= 1){
 	 	var first_offer = response.getElementsByTagName("OfferListing")[0];
 	 	var prime = first_offer.getElementsByTagName("IsEligibleForPrime")[0].childNodes[0].nodeValue;
-	 	item_price = first_offer.getElementsByTagName("ListPrice")[0].getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
+	 	item_price = first_offer.getElementsByTagName("Price")[0].getElementsByTagName("Amount")[0].childNodes[0].nodeValue;
 	 	console.log(item_price);
 	 	console.log(prime);
 	 	}
@@ -114,6 +124,7 @@ function get_amazon_details() {
 
 	 	item_price = parseInt(item_price)/100;
 
+	 	$("#product_ASIN").val(ASIN);
 	  $("#product_name").val(name);
 	  $("#product_price").val(item_price);
 	  $("#product_vendor").val(vendor);
