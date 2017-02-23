@@ -23,12 +23,30 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+
+    if params[:category][:image].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:category][:image])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      puts preloaded.identifier
+      @category.image = preloaded.identifier
+    end
+
     @category.save
     respond_with(@category)
   end
 
   def update
     @category.update(category_params)
+
+    if params[:category][:image].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:category][:image])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      puts preloaded.identifier
+      @category.image = preloaded.identifier
+    end
+
+    @category.save
+
     respond_with(@category)
   end
 
