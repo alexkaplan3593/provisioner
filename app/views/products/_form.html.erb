@@ -52,6 +52,10 @@
       <%= f.hidden_field :prime, :placeholder => "prime" %>
     </div>
 
+    <div class="field">
+    <%= f.label :category_id, "Category" %><br>
+    <%= f.collection_select(:category_id, @categories, :id, :category_name, {}, {:class=>"chosen-select", 'multiple' => 'true'}) %>
+    </div>
 
     <div class="field">
     <%= f.label :tags %><br>

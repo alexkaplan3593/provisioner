@@ -1,7 +1,7 @@
 class ProductsController < GridController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  before_action :get_tags, only: [:new, :show, :edit, :update, :destroy]
+  before_action :get_tags_and_categories, only: [:new, :show, :edit, :update, :destroy]
   before_action :check_retailer
   respond_to :html, :js, :json
   # GET /products
@@ -126,8 +126,9 @@ class ProductsController < GridController
       end
     end
 
-    def get_tags
+    def get_tags_and_categories
       @tags = Tag.all
+      @categories = Category.all
     end
 
 
